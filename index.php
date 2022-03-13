@@ -21,39 +21,52 @@
 
 <body>
 
-    <nav class="navbar navbar-default navbar-transparent navbar-fixed-top" color-on-scroll="200">
-        <!-- if you want to keep the navbar hidden you can add this class to the navbar "navbar-burger"-->
-        <div class="container">
-            <div class="navbar-header">
-                <button id="menu-toggle" type="button" class="navbar-toggle" data-toggle="collapse" data-target="#example">
-                    <span class="sr-only">Toggle navigation</span>
-                    <span class="icon-bar bar1"></span>
-                    <span class="icon-bar bar2"></span>
-                    <span class="icon-bar bar3"></span>
-                </button>
-                <a href="#" class="navbar-brand icon">
-                    FOOD HOUSE
-                </a>    
-                      
-            </div>
-            <div class="collapse navbar-collapse">
-                <ul class="nav navbar-nav navbar-left navbar-uppercase">
-                    <li>
-                        <a href="#" target="_blank">Trang chủ</a>
-                    </li>
-                    <li>
-                        <a href="#" target="_blank">Menu</a>
-                    </li>
-                    <li>
-                        <a href="#" target="_blank">Chuỗi nhà hàng</a>
-                    </li>                  
-                </ul>
-               
-            </div>
-          
-            <!-- /.navbar-collapse -->
+    <nav class="navbar navbar-default navbar-fixed-top" color-on-scroll="200">
+    <!-- if you want to keep the navbar hidden you can add this class to the navbar "navbar-burger"-->
+    <div class="container">
+        <div class="navbar-header">
+            <button id="menu-toggle" type="button" class="navbar-toggle" data-toggle="collapse"
+                data-target="#example">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar bar1"></span>
+                <span class="icon-bar bar2"></span>
+                <span class="icon-bar bar3"></span>
+            </button>
+            <a href="#" class="navbar-brand icon">
+                FOOD HOUSE
+            </a>
+
         </div>
-    </nav>
+        <div class="collapse navbar-collapse">
+            <ul class="nav navbar-nav navbar-left navbar-uppercase">
+                <li>
+                    <a href="#" target="_blank">Trang chủ</a>
+                </li>
+                <li>
+                    <a href="#" target="_blank">Menu</a>
+                </li>
+                <li>
+                    <a href="#" target="_blank">Chuỗi nhà hàng</a>
+                </li>
+                    <form class="navbar-form navbar-left">
+                        <div class="form-group">
+                          <input type="text" class="form-control" placeholder="Search">
+                        </div>
+                        <button type="submit" class="btn btn-default">tìm kiếm</button>
+                      </form>
+                 <li>
+                        <a href="#" target="_blank">Đăng nhập</a>                         
+                </li>  
+                <li>
+                    <a href="#" target="_blank">giỏ hàng</a>
+                </li>                                  
+            </ul>
+            
+        </div>
+
+        <!-- /.navbar-collapse -->
+    </div>
+</nav>
 
     <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
         <!-- Indicators -->

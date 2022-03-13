@@ -46,8 +46,20 @@
                     <li>
                         <a href="#" target="_blank">Chuỗi nhà hàng</a>
                     </li>
+                        <form class="navbar-form navbar-left">
+                            <div class="form-group">
+                              <input type="text" class="form-control" placeholder="Search">
+                            </div>
+                            <button type="submit" class="btn btn-default">tìm kiếm</button>
+                          </form>
+                     <li>
+                            <a href="#" target="_blank">Đăng nhập</a>                         
+                    </li>  
+                    <li>
+                        <a href="#" target="_blank">giỏ hàng</a>
+                    </li>                                  
                 </ul>
-
+                
             </div>
 
             <!-- /.navbar-collapse -->
