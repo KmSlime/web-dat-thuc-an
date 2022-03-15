@@ -2721,6 +2721,13 @@ a,
     padding-right: 0;
     padding-left: 0;
   }
+<<<<<<< HEAD
+=======
+  .section-we-made-1 .transition-1 {
+    /*     		transition: all 0.5s; */
+  }
+
+>>>>>>> 2a23df85d5faa33e265b5701138039da77d30195
   .section-we-made-2 .scroll-area {
     width: 70%;
     height: 100%;
@@ -3641,6 +3648,14 @@ body {
   .dropdown-menu {
     display: none;
   }
+<<<<<<< HEAD
+=======
+
+  .navbar-fixed-top {
+    -webkit-backface-visibility: hidden;
+  }
+
+>>>>>>> 2a23df85d5faa33e265b5701138039da77d30195
   .social-line .btn {
     margin: 0 0 10px 0;
   }
@@ -4063,4 +4078,8 @@ flex-grow: 1;
   @media (min-width: 1200px){
   .navbar .container{
     width: 1500px;
+<<<<<<< HEAD
   }}
+=======
+  }
+>>>>>>> 2a23df85d5faa33e265b5701138039da77d30195
