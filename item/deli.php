@@ -46,79 +46,127 @@
                     <li>
                         <a href="#" target="_blank">Chuỗi nhà hàng</a>
                     </li>
-                    <form class="navbar-form navbar-left">
-                        <div class="form-group">
-                            <input type="text" class="form-control" placeholder="Search">
-                        </div>
-                        <button type="submit" class="btn btn-default">tìm kiếm</button>
-                    </form>
-                    <li>
-                        <a href="#" target="_blank">Đăng nhập</a>
-                    </li>
+                        <form class="navbar-form navbar-left">
+                            <div class="form-group">
+                              <input type="text" class="form-control" placeholder="Search">
+                            </div>
+                            <button type="submit" class="btn btn-default">tìm kiếm</button>
+                          </form>
+                     <li>
+                            <a href="#" target="_blank">Đăng nhập</a>                         
+                    </li>  
                     <li>
                         <a href="#" target="_blank">giỏ hàng</a>
-                    </li>
+                    </li>                                  
                 </ul>
-
+                
             </div>
 
             <!-- /.navbar-collapse -->
         </div>
     </nav>
     <!-- section list -->
+    <!-- section list -->
     <div class="section section-item ">
         <div class="container">
             <div class="row">
-                <div class="col-md-6 col-xs-4">
-                    <div class="item-preview">
-                        <img alt="..." class="item-image" src="assets\img\test.jpg" />
-                    </div>
-                    <div class="item-decription">
-                        <h2>Mô tả</h2>
-                        <p> món này rất ngon</p>
-                    </div>
-                </div>
-                <!--user content-->
-                <div class="col-md-6 col-xs-6">
-                    <div class="item-detail">
-                        <h3>Cơm sườn</h3>
+                <div class="col-md-6 ">
+                    <div class="user-infor box">
                         <form action="" class="form-horizontal">
                             <div class="form-group">
-                                <label for="first_name" class="col-xs-3 control-label">Giá tiền</label>
+                                <label for="first_name" class="col-xs-3 control-label">Họ tên</label>
                                 <div class="col-xs-9">
-                                    <p>12.000đ</p>
+                                    <input type="text" class="form-control" id="first_name" name="first_name">
                                 </div>
                             </div>
                             <div class="form-group">
                                 <label for="last_name" class="col-xs-3 control-label">Gmail</label>
                                 <div class="col-xs-9">
-                                    <div class="input-group">
-                                        <span class="input-group-btn">
-                                            <button type="button" class="btn btn-default btn-number" disabled="disabled" data-type="minus" data-field="quant[1]">
-                                                <span class="glyphicon glyphicon-minus"></span>
-                                            </button>
-                                        </span>
-                                        <input type="text" name="quant[1]" class="form-control input-number" value="1" min="1" max="10">
-                                        <span class="input-group-btn">
-                                            <button type="button" class="btn btn-default btn-number" data-type="plus" data-field="quant[1]">
-                                                <span class="glyphicon glyphicon-plus"></span>
-                                            </button>
-                                        </span>
-                                    </div>
+                                    <input type="text" class="form-control" id="last_name" name="last_name">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="last_name" class="col-xs-3 control-label">Password</label>
+                                <div class="col-xs-9">
+                                    <input type="text" class="form-control" id="last_name" name="last_name">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="last_name" class="col-xs-3 control-label">Số điện thoại</label>
+                                <div class="col-xs-9">
+                                    <input type="text" class="form-control" id="last_name" name="last_name">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="last_name" class="col-xs-3 control-label">Địa chỉ</label>
+                                <div class="col-xs-9">
+                                    <input type="text" class="form-control" id="last_name" name="last_name">
+                                </div>
+                            </div>
+                        </form>
+
+                    </div>
+                    <br></br>
+                 
+                </div>
+            <!--user content-->
+                <div class="col-md-6 ">
+                    <div class="pay-infor box">
+                        <table class="table  ">
+                            <thead>
+                                <tr>
+                                    <th>Tên hàng</th>
+                                    <th></th>
+                                    <th>
+                                        <button type="" class="btn btn-default" style="float:right;">Thêm</button>
+                                    <th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>Trà sữa</td>
+                                    <td>thêm đường</td>
+                                    <td>15.000đ</td>
+
+                                </tr>
+                                <tr>
+                                    <td>Trà sữa</td>
+                                    <td>thêm đường</td>
+                                    <td>15.000đ</td>
+                                </tr>
+                                <tr>
+                                    <td>Trà sữa</td>
+                                    <td>thêm đường</td>
+                                    <td>14.000đ</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        <h3>Thanh toán</h3>
+                        <form action="" class="form-horizontal">
+                            <div class="form-group">
+                                <label for="first_name" class="col-xs-3 control-label">Tổng tiền</label>
+                                <div class="col-xs-9">
+                                    <h3>12.000đ</h3>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="last_name" class="col-xs-3 control-label">Ghi chú</label>
+                                <div class="col-xs-9">
+                                    <textarea id="" name="" placeholder="ghi chú"></textarea>
                                 </div>
                             </div>          
                             <div class="form-group">
                                 <div class="col-xs-offset-3 col-xs-9">
-                                    <button type="" class="btn btn-default">thêm vào giỏ hàng</button>
+                                    <button type="" class="btn btn-default">Thanh toán</button>
                                 </div>
                             </div>
                         </form>
-                    </div>
+                    </div>                  
                 </div>
-
             </div>
         </div>
     </div>
+   
     <footer class="footer footer-big footer-color-black" data-color="black">
         <div class="container">
             <div class="row">
@@ -229,5 +277,5 @@
 <!--   file where we handle all the script from the Gaia - Bootstrap Template   -->
 <script type="text/javascript" src="assets/js/gaia.js"></script>
 
-
+    
 </html>
