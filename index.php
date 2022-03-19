@@ -17,10 +17,6 @@
     <link href='https://fonts.googleapis.com/css?family=Cambo|Poppins:400,600' rel='stylesheet' type='text/css'>
     <link href="http://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css" rel="stylesheet">
     <link href="assets/css/fonts/pe-icon-7-stroke.css" rel="stylesheet">
-<<<<<<< HEAD
-    <link href="assets/css/fonts/login.css" rel="stylesheet">
-=======
->>>>>>> 2a23df85d5faa33e265b5701138039da77d30195
 </head>
 
 <body>
