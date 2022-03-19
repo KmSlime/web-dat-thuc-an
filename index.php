@@ -55,13 +55,9 @@
                         <button type="submit" class="btn btn-default">tìm kiếm</button>
                       </form>
                  <li>
-<<<<<<< HEAD
                  <a target="_blank">
                      <Button id="show-login" style = "background-color: transparent" class="buttoncenter">Đăng nhập</Button>
                  </a>                  
-=======
-                        <a href="#" target="_blank">Đăng nhập</a>                         
->>>>>>> 2a23df85d5faa33e265b5701138039da77d30195
                 </li>  
                 <li>
                     <a href="#" target="_blank">giỏ hàng</a>
@@ -125,7 +121,6 @@
           </div>
           ...
         </div>
-<<<<<<< HEAD
 
     <div class="popup">
         
@@ -154,9 +149,6 @@
         </div>
     </div>
 
-=======
-      
->>>>>>> 2a23df85d5faa33e265b5701138039da77d30195
 
         <!-- Controls -->
         <a class="left carousel-control" href="#carousel-example-generic" role="button" data-slide="prev">
@@ -168,12 +160,6 @@
           <span class="sr-only">Next</span>
         </a>
       </div>
-<<<<<<< HEAD
-=======
-
-   
-
->>>>>>> 2a23df85d5faa33e265b5701138039da77d30195
     <div class="section section-our-team-freebie">
             <div class="container">
                 <div class="content">
@@ -423,20 +409,12 @@
             </div>
         </div>
     </footer>
-<<<<<<< HEAD
-=======
-
->>>>>>> 2a23df85d5faa33e265b5701138039da77d30195
 </body>
 
 <!--   core js files    -->
 <script src="assets/js/jquery.min.js" type="text/javascript"></script>
 <script src="assets/js/bootstrap.js" type="text/javascript"></script>
-<<<<<<< HEAD
 <script src="assets/js/login.js" type="text/javascript"></script>
-=======
-
->>>>>>> 2a23df85d5faa33e265b5701138039da77d30195
 <!--  js library for devices recognition -->
 <script type="text/javascript" src="assets/js/modernizr.js"></script>
 
@@ -445,9 +423,5 @@
 
 <!--   file where we handle all the script from the Gaia - Bootstrap Template   -->
 <script type="text/javascript" src="assets/js/gaia.js"></script>
-<<<<<<< HEAD
 <script type="text/javascript" src="assets/js/login.js"></script>
-=======
->>>>>>> 2a23df85d5faa33e265b5701138039da77d30195
-<script type="text/javascript" src="assets/js/my.js"></script>
 </html>
