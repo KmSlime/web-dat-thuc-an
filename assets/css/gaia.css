@@ -2527,7 +2527,6 @@ a,
 .section-header-freebie .container,
 .section-our-team-freebie .container {
   position: relative;
-  z-index: 100;
   display: block;
   margin-top: 30vh;
   text-align: center;
