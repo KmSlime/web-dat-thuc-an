@@ -96,13 +96,13 @@
 </body>
 
 <!--  js library for devices recognition -->
-<script type="text/javascript" src="assets/js/modernizr.js"></script>
+<script type="text/javascript" src="<?php echo asset('js/modernizr.js')?>"></script>
 
 <!--  script for google maps   -->
 <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js"></script>
 
 <!--   file where we handle all the script from the Gaia - Bootstrap Template   -->
-<script type="text/javascript" src="assets/js/my.js"></script>
+<script type="text/javascript" src="<?php echo asset('js/my.js')?>"></script>
 <script type="text/javascript">
     // Plugin options and our code
 $("#modal_trigger").leanModal({
