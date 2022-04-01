@@ -2743,7 +2743,6 @@ fieldset[disabled] .form-control {
 .section-header-freebie .container,
 .section-our-team-freebie .container {
   position: relative;
-  z-index: 100;
   display: block;
   margin-top: 30vh;
   text-align: center;
@@ -2794,6 +2793,10 @@ fieldset[disabled] .form-control {
 }
 .section-get-started .container {
   margin: 15vh auto;
+  z-index:3;
+}
+.carousel-indicators{
+  z-index:1;
 }
 
 .section-contact-4 .parallax,
