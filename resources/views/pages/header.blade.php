@@ -1,25 +1,21 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
+    @extends('layouts.master-header')
     <meta charset="utf-8" />
-    <link rel="apple-touch-icon" sizes="76x76" href="assets/img/apple-icon.png">
-    <link rel="icon" type="image/png" sizes="96x96" href="assets/img/favicon.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="<?php echo asset('img/apple-icon.png')?>">
+    <link rel="icon" type="<?php echo asset('image/png')?>" sizes="96x96" href="<?php echo asset('img/favicon.png')?>">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
-    <title>web</title>
     <meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0' name='viewport' />
-    <link href="assets/css/bootstrap.css" rel="stylesheet" />
-    <link href="assets/css/gaia.css" rel="stylesheet" />
-
+    <link rel="stylesheet" href="<?php echo asset('css/gaia.css')?>"> 
+    <link rel="stylesheet" href="<?php echo asset('css/bootstrap.css')?>"> 
     <!--     Fonts and icons     -->
     <link href='https://fonts.googleapis.com/css?family=Cambo|Poppins:400,600' rel='stylesheet' type='text/css'>
     <link href="http://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css" rel="stylesheet">
-    <link href="assets/css/fonts/pe-icon-7-stroke.css" rel="stylesheet">
+    <link rel="stylesheet" href="<?php echo asset('css/fonts/pe-icon-7-stroke.css')?>" type="text/css"> 
 </head>
-
 <body>
     <!--   core js files    -->
-
     <!--header-->
     <nav class="navbar navbar-default navbar-fixed-top" color-on-scroll="200">
         <!-- if you want to keep the navbar hidden you can add this class to the navbar "navbar-burger"-->
@@ -138,5 +134,3 @@
             </div>
         </section>
     </div>
-    <!--login form-->
-    <!--header-->
