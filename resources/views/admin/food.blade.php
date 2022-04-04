@@ -1,4 +1,4 @@
-<h1>Danh sách các món ăn</h1>
+<h1>{{ $pageName }}</h1>
 <table border="1">
     <thead>
         <tr>
@@ -12,8 +12,8 @@
         </tr>
     </thead>
     <tbody>
-    @foreach($news as $row)
-        <td>{{$row->id}}</td>
+    @foreach($food as $row)
+        <td>{{$row->FoodCode}}</td>
         <td><a href="/admin/food/{{$row->FoodCode}}">{{$row->FoodName}}</a></td>
             <td>{{$row->FoodPrice}}</td>
             <td>{{$row->FoodCategoryName}}</td>

@@ -40,8 +40,17 @@
         <input type="text" name="Status" value="">
     </p>
     <p>
-        <label for="FoodCoverPhoto">Hình ảnh</label><br>
-        <textarea cols="20" rows="10" name="FoodCoverPhoto"></textarea>
+    <div class="form-group">
+            <label class="control-label col-md-2" for="FoodCoverPhoto">Ảnh </label>
+            <input type ="file" name="image" class="form-control">
+        </div>
+        <div class="form-group">
+            <label class="control-label col-md-2"></label>
+            <div class="col-md-10 p-2">
+                <img id="Picture" width="200" height="200" />
+            </div>
+        </div>
+        
     </p>
 
     <p>

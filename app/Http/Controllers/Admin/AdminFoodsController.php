@@ -1,11 +1,12 @@
 <?php
 
-namespace app\Http\Controllers\Admin;
+namespace App\Http\Controllers\Admin;
 
+use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
-use app\Http\Controllers\Controller;
+use Illuminate\Support\Facades\DB;
 
-class AdminNewsController extends Controller
+class AdminFoodsController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -14,11 +15,10 @@ class AdminNewsController extends Controller
      */
     public function index()
     {
-        $news = DB::table('food')->select('*');
-        $news = $news->get();
+        $food = DB::table('food')->select('*');
+        $food = $food->get();
 
         $pageName = 'Danh sách món ăn';
-
         return view('/admin/food', compact('food', 'pageName'));
     }
 
@@ -48,7 +48,7 @@ class AdminNewsController extends Controller
         $food->FoodCoverPhoto = $request->FoodCoverPhoto;
 
         $food->save();
-        return redirect()->action('Admin\AdminNewsFoodController@create');
+        return redirect()->action('Admin\AdminFoodsController@create');
     }
 
     /**
@@ -93,7 +93,7 @@ class AdminNewsController extends Controller
         $food->Status = $request->Status;
         $food->FoodCoverPhoto = $request->FoodCoverPhoto;
         $food->save();
-        return redirect()->action('Admin\AdminNewsFoodController@index');
+        return redirect()->action('Admin\AdminFoodsController@index');
     }
 
     /**
@@ -107,6 +107,6 @@ class AdminNewsController extends Controller
         $food = Food::find($FoodCode);
 
         $food->delete();
-        return redirect()->action('Admin\AdminNewsFoodController@index')->with('success','Dữ liệu xóa thành công.');
+        return redirect()->action('Admin\AdminFoodsController@index')->with('success','Dữ liệu xóa thành công.');
     }
 }
