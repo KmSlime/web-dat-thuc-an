@@ -1,17 +1,4 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    @extends('layouts.master-header')
-    <meta charset="utf-8" />
-    <link rel="apple-touch-icon" sizes="76x76" href="<?php echo asset('img/apple-icon.png')?>">
-    <link rel="icon" type="<?php echo asset('image/png')?>" sizes="96x96" href="<?php echo asset('img/favicon.png')?>">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
-    <meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0' name='viewport' />
-    <link rel="stylesheet" href="<?php echo asset('css/gaia.css')?>"> 
-    <link rel="stylesheet" href="<?php echo asset('css/bootstrap.css')?>"> 
-   
-</head>
-<body>
+
     <!--   core js files    -->
     <!--header-->
     <nav class="navbar navbar-default navbar-fixed-top" color-on-scroll="200">
@@ -87,9 +74,10 @@
                 </div>
             </div>
             <div class="user_login">
-                <form>
-                    <label>Email / Username</label> <input type="text"><br>
-                    <label>Password</label> <input type="password"><br>
+                <form enctype="multipart/form-data" method="post">
+                    @csrf <!-- {{ csrf_field() }} -->
+                    <label>Email / Username</label> <input type="text" name="email"><br>
+                    <label>Password</label> <input type="password" name="password"><br>
 
                     <div class="checkbox">
                         <input id="remember" type="checkbox"> <label for="remember">Remember me on this computer</label>
@@ -99,9 +87,8 @@
                         <div class="one_half">
                             <a class="btn back_btn" href="#">Back</a>
                         </div>
-
                         <div class="one_half last">
-                            <a class="btn btn_red" href="#">Login</a>
+                            <button class="btn btn_red" type="submit" name="Login">Login</button>
                         </div>
                     </div>
                 </form>

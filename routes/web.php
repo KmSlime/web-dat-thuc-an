@@ -11,6 +11,6 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/','HomeController@index');
-Route::get('/home', 'App\Http\Controllers\HomeController@index')->name('Home');
 Route::get('/admin', 'App\Http\Controllers\AdminController@index')->name('Admin');
+Route::get('/home','App\Http\Controllers\HomeController@getHome');
+Route::post('/home','App\Http\Controllers\HomeController@postLogin');
