@@ -1,4 +1,4 @@
-<form method="post" action="/admin/food/store">
+<form method="post" action="/admin/food/store" enctype="multipart/form-data">
     @method('PATCH')
     @csrf
 

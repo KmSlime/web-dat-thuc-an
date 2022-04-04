@@ -29,3 +29,5 @@ Route::PATCH('/admin/news/edit/{FoodCode}', 'App\Http\Controllers\Admin\AdminFoo
 Route::get('/admin/news/{FoodCode}', 'App\Http\Controllers\Admin\AdminFoodsController@show');
 
 Route::DELETE('/admin/news/delete{FoodCode', 'App\Http\Controllers\Admin\AdminFoodsController@destroy');
+//register
+Route::post('register', 'App\Http\Controllers\HomeController@postRegister');

@@ -96,14 +96,14 @@
                 <a class="forgot_password" href="#">Forgot password?</a>
             </div>
             <div class="user_register">
-                <form>
-                    <label>Full Name</label> <input type="text"><br>
-                    <label>Email Address</label> <input type="email"><br>
-                    <label>Password</label> <input type="password"><br>
-
+                <form action="register" method="post">
+                    <input type="hidden" name="_token" value="{{ csrf_token() }}"/>
+                    <label>Email Address</label> <input type="email" name="email"><br>
+                    <label>Password</label> <input type="password" name="password"><br>
+{{-- 
                     <div class="checkbox">
                         <input id="send_updates" type="checkbox"> <label for="send_updates">Send me occasional email updates</label>
-                    </div>
+                    </div> --}}
 
                     <div class="action_btns">
                         <div class="one_half">
@@ -111,7 +111,7 @@
                         </div>
 
                         <div class="one_half last">
-                            <a class="btn btn_red" href="#">Register</a>
+                            <button class="btn btn_red" type="submit" >Register</button>
                         </div>
                     </div>
                 </form>
