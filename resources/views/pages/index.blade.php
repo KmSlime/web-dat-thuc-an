@@ -1,5 +1,5 @@
-<?php include_once("header.php"); ?>
 
+@extends('layouts.master')
 <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
     <!-- Indicators -->
     <ol class="carousel-indicators">
@@ -223,4 +223,3 @@
             </div>
         </div>
     </div>
-    <?php include_once("footer-2.php"); ?>
