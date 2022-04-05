@@ -1,5 +1,5 @@
-<?php include_once("header.php"); ?>
 
+@extends('layouts.master')
 <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
     <!-- Indicators -->
     <ol class="carousel-indicators">
@@ -74,153 +74,27 @@
                 </div>
                 <div class="team">
                     <div class="row">
-                        <div class="col-md-3 col-xs-3">
-                            <div class="card card-member">
-                                <div class="content">
-                                    <div class="avatar avatar-danger">
-                                        <img alt="..." class="" src="assets\img\test.jpg" />
-                                    </div>
-                                    <div class="description">
-                                        <h3 class="title">43.000đ</h3>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md-3 col-xs-3">
-                            <div class="card card-member">
-                                <div class="content">
-                                    <div class="avatar avatar-danger">
-                                        <img alt="..." class="" src="assets\img\test.jpg" />
-                                    </div>
-                                    <div class="description">
-                                        <h3 class="title">43.000đ</h3>
+                        @foreach($listFood as $row)
+                        <tr>
+                            <div class="col-md-3 col-xs-3">
+                                <div class="card card-member">
+                                    <div class="content">
+                                        <div class="avatar avatar-danger">
+                                            <td><img alt="" class="" src="{{$row->FoodCoverPhoto}}" /></td>
+                                        </div>
+                                        <div class="description">
+                                            <td><h3 class="title">{{$row->FoodName}}</h3></td>
+                                        </div>
+                                        <div class="description">
+                                            <td><h3 class="title">{{$row->FoodPrice}} VNĐ</h3></td>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
-                        </div>
-                        <div class="col-md-3 col-xs-3">
-                            <div class="card card-member">
-                                <div class="content">
-                                    <div class="avatar avatar-danger">
-                                        <img alt="..." class="" src="assets\img\test.jpg" />
-                                    </div>
-                                    <div class="description">
-                                        <h3 class="title">43.000đ</h3>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md-3 col-xs-3">
-                            <div class="card card-member">
-                                <div class="content">
-                                    <div class="avatar avatar-danger">
-                                        <img alt="..." class="" src="assets\img\test.jpg" />
-                                    </div>
-                                    <div class="description">
-                                        <h3 class="title">43.000đ</h3>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md-3 col-xs-3">
-                            <div class="card card-member">
-                                <div class="content">
-                                    <div class="avatar avatar-danger">
-                                        <img alt="..." class="" src="assets\img\test.jpg" />
-                                    </div>
-                                    <div class="description">
-                                        <h3 class="title">43.000đ</h3>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md-3 col-xs-3">
-                            <div class="card card-member">
-                                <div class="content">
-                                    <div class="avatar avatar-danger">
-                                        <img alt="..." class="" src="assets\img\test.jpg" />
-                                    </div>
-                                    <div class="description">
-                                        <h3 class="title">43.000đ</h3>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md-3 col-xs-3">
-                            <div class="card card-member">
-                                <div class="content">
-                                    <div class="avatar avatar-danger">
-                                        <img alt="..." class="" src="assets\img\test.jpg" />
-                                    </div>
-                                    <div class="description">
-                                        <h3 class="title">43.000đ</h3>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md-3 col-xs-3">
-                            <div class="card card-member">
-                                <div class="content">
-                                    <div class="avatar avatar-danger">
-                                        <img alt="..." class="" src="assets\img\test.jpg" />
-                                    </div>
-                                    <div class="description">
-                                        <h3 class="title">43.000đ</h3>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md-3 col-xs-3">
-                            <div class="card card-member">
-                                <div class="content">
-                                    <div class="avatar avatar-danger">
-                                        <img alt="..." class="" src="assets\img\test.jpg" />
-                                    </div>
-                                    <div class="description">
-                                        <h3 class="title">43.000đ</h3>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md-3 col-xs-3">
-                            <div class="card card-member">
-                                <div class="content">
-                                    <div class="avatar avatar-danger">
-                                        <img alt="..." class="" src="assets\img\test.jpg" />
-                                    </div>
-                                    <div class="description">
-                                        <h3 class="title">43.000đ</h3>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md-3 col-xs-3">
-                            <div class="card card-member">
-                                <div class="content">
-                                    <div class="avatar avatar-danger">
-                                        <img alt="..." class="" src="assets\img\test.jpg" />
-                                    </div>
-                                    <div class="description">
-                                        <h3 class="title">43.000đ</h3>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md-3 col-xs-3">
-                            <div class="card card-member">
-                                <div class="content">
-                                    <div class="avatar avatar-danger">
-                                        <img alt="..." class="" src="assets\img\test.jpg" />
-                                    </div>
-                                    <div class="description">
-                                        <h3 class="title">43.000đ</h3>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
+                        </tr>
+                        @endforeach
                     </div>
                 </div>
             </div>
         </div>
     </div>
-    <?php include_once("footer-2.php"); ?>

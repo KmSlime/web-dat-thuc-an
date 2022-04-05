@@ -1,4 +1,4 @@
-<?php include_once("header.php"); ?>
+@extends('layouts.master-2')
     <!-- section list -->
     <div class="section section-item ">
         <div class="container">
@@ -69,4 +69,3 @@
             </div>
         </div>
     </div>
-<?php include_once("footer.php"); ?>
