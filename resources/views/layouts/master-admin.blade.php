@@ -1,4 +1,4 @@
-<{{asset('!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="utf-8">
@@ -9,7 +9,7 @@
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
 
   <!-- Font Awesome Icons -->
-  <link href="{{asset('assets/fonts/fontawesome-free/css/all.min.css')}}" rel="stylesheet">
+  <link rel="stylesheet" href="{{ asset('fonts/fontawesome-free/css/all.min.css') }}" >
 
   <!-- DataTables -->
   <link rel="stylesheet" href="{{asset('css/admincss/dataTables.bootstrap4.min.css')}}">
@@ -19,8 +19,24 @@
   <!-- IonIcons -->
   <link rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
   <!-- Theme style -->
+<<<<<<< HEAD
   <link rel="stylesheet" href="{{asset('css/admincss/adminlte.min.css')}}">
   </head>
+=======
+  <link rel="stylesheet" href= "{{asset('css/admincss/adminlte.min.css')}}">
+  <style>
+      img{
+        width: 200px;
+        height: 200px;
+        object-fit: cover;
+      }
+      .task{
+        display: flex;
+        width:100px
+      }
+  </style>
+</head>
+>>>>>>> 5175b9336a011ec76b7df2499d1004326d558502
 
   <body class="hold-transition sidebar-mini">
     <div class="wrapper">
@@ -108,7 +124,21 @@
     </div>
     <!-- ./wrapper -->
 
+<<<<<<< HEAD
     <!-- REQUIRED SCRIPTS -->
+=======
+  @yield('content') 
+  <!-- Control Sidebar -->
+  <aside class="control-sidebar control-sidebar-dark">
+    <!-- Control sidebar content goes here -->
+  </aside>
+  <!-- /.control-sidebar -->
+ 
+  <!-- Main Footer -->
+ 
+</div>
+<!-- ./wrapper -->
+>>>>>>> 5175b9336a011ec76b7df2499d1004326d558502
 
     <!-- jQuery -->
     <script src="{{asset('js/adminjs/jquery.min.js')}}"></script>
