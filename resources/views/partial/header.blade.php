@@ -19,10 +19,10 @@
             <div class="collapse navbar-collapse">
                 <ul class="nav navbar-nav navbar-left navbar-uppercase">
                     <li>
-                        <a href="#" target="_blank">Trang chủ</a>
+                        <a href="/home">Trang chủ</a>
                     </li>
                     <li>
-                        <a href="#" target="_blank">Menu</a>
+                            <a href="/menu">Menu</a>
                     </li>
                     <li>
                         <a href="#" target="_blank">Chuỗi nhà hàng</a>

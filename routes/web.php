@@ -14,6 +14,11 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/home','App\Http\Controllers\HomeController@getHome');
 Route::post('/home','App\Http\Controllers\HomeController@postLogin');
+Route::get('/menu','App\Http\Controllers\HomeController@getAll');
+Route::get('/menu/{idcatergory}','App\Http\Controllers\HomeController@getMenu');
+//login
+Route::post('login', 'App\Http\Controllers\HomeController@postLogin');
+
 Route::get('/admin', 'App\Http\Controllers\AdminController@index')->name('Admin');
 //thêm - sửa - xoá admin
 //thêm http://localhost:8000/admin/food/create/

@@ -1,17 +1,38 @@
 <?php
-
 namespace App\Http\Controllers;
 use App\Http\Controllers\Controller;
 use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Http\Response;
-use DB,Datetime,Session,File;
+use Illuminate\Support\Facades\DB;
+use App\Models\food;
 class HomeController extends Controller
 {
     public function getHome()
     {
-        return view('pages.index');
+        $listFood = DB::table('food')->select('*');
+        $listFood = $listFood ->get();
+        return view('pages.index',compact('listFood'));
+    }
+    public function getMenu($idcatergory)
+    {   
+        $catergory = DB::table('food_categories')->select('*');
+        $catergory = $catergory ->get();
+        $food = DB::table('food')->select('*');
+        $food = food::where('FoodCategoryCode_PFK','=',$idcatergory)->select('*');
+        $food = $food ->get();
+        return view('pages.catergory',compact('catergory','food'));
+    }
+    public function getAll()
+    {
+        $catergory = DB::table('food_categories')->select('*');
+        $catergory = $catergory ->get();
+        $food = DB::table('food')->select('*');
+        $food = $food ->get();
+        
+        // $des = html_entity_decode($news->description);
+        return view('pages.catergory',compact('catergory','food'));
     }
     public function postLogin(Request $request)
     {
@@ -20,17 +41,8 @@ class HomeController extends Controller
             'email' => $request ->email,
             'password' =>$request ->password,
         ];
-        $asx = Auth::user('email');
-        if (Auth::attempt($arr))
-        {
-           dd("Đăng nhập thành công");
-        }
-        else 
-        {
-            $a= $arr['email'];
-            $b=$arr['password'];
-            dd("Đăng nhập thất bại $a $b $asx");
-        }
+        return dd($arr['email']);
+        
     }
     function getRegister()
     {
