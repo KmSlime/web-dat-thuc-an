@@ -19,7 +19,7 @@ class AdminFoodsController extends Controller
         $food = $food->get();
 
         $pageName = 'Danh sách món ăn';
-        return view('/admin/food', compact('food', 'pageName'));
+        return view('/admin/adminFood/index', compact('food', 'pageName'));
     }
 
     /**

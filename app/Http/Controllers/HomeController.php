@@ -42,8 +42,8 @@ class HomeController extends Controller
 
     public function postLogin(Request $request)
     {
-        $listFood = DB::table('food')->select('*');
-        $listFood = $listFood->get();
+        $foods = DB::table('food')->select('*');
+        $listFood = $foods->get();
         $arr = [
             'email' => $request->email,
             'password' => $request->password,

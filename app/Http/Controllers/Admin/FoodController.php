@@ -19,6 +19,8 @@ class FoodController extends Controller
     {
         $foods = DB::table('food')->select('*')->paginate(10);
         $fcs = DB::table('food_categories')->select('*')->get();
+
+        $pageName = 'Danh sách món ăn';
         return view('admin/adminFood/index', compact('foods','fcs'));
     }
 
@@ -29,7 +31,7 @@ class FoodController extends Controller
      */
     public function create()
     {
-        
+        // return view('/admin/');
     }
 
     /**
@@ -40,7 +42,15 @@ class FoodController extends Controller
      */
     public function store(Request $request)
     {
-        
+        $food = new food;
+        $food->FoodName = $request->FoodName; 
+        $food->FoodPrice = $request->FoodPrice;
+        $food->FoodCategoryCode = $request->FoodCategoryCode;
+        $food->Status = $request->Status;
+        $food->FoodCoverPhoto = $request->FoodCoverPhoto;
+
+        $food->save();
+        return redirect()->action('Admin\FoodController@create');
     }
 
 
