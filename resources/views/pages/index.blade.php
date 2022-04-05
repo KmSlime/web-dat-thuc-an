@@ -1,5 +1,16 @@
 
 @extends('layouts.master')
+<?php
+if (isset($loginuser)){
+    ob_start();
+    session_start();
+    foreach ($loginuser as $key) {
+        $_SESSION['id_login'] = $key ->UserID_PK;
+        echo $_SESSION['id_login'];
+    }
+}
+?>
+
 <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
     <!-- Indicators -->
     <ol class="carousel-indicators">

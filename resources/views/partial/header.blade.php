@@ -74,8 +74,8 @@
                 </div>
             </div>
             <div class="user_login">
-                <form enctype="multipart/form-data" method="post">
-                    @csrf <!-- {{ csrf_field() }} -->
+                <form action="login" method="post">
+                    <input type="hidden" name="_token" value="{{ csrf_token() }}"/>
                     <label>Email / Username</label> <input type="text" name="email"><br>
                     <label>Password</label> <input type="password" name="password"><br>
 

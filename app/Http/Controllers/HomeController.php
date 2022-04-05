@@ -36,13 +36,33 @@ class HomeController extends Controller
     }
     public function postLogin(Request $request)
     {
-
+        $listFood = DB::table('food')->select('*');
+        $listFood = $listFood ->get();
         $arr = [
             'email' => $request ->email,
             'password' =>$request ->password,
         ];
-        return dd($arr['email']);
-        
+        $loginuser = DB::table('users')->select('*');
+        $loginuser = User::where('Username','=',$arr['email'])->where('Password','=',$arr['password'])->select('*');
+        $loginuser = $loginuser->get();
+        if(($loginuser->count())>0)
+        {
+            foreach($loginuser as $key)
+            {
+                if(($key->PermissionID_PFK)==1)
+                {
+                    return view('layouts.master-admin',compact('listFood','loginuser'));
+                }
+                else 
+                {
+                    return view('pages.index',compact('listFood','loginuser'));
+                }
+            }
+        }
+        else 
+        {
+            return dd('no');
+        }
     }
     function getRegister()
     {
