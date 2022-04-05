@@ -1,4 +1,3 @@
-
 @extends('layouts.master')
 <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
     <!-- Indicators -->
@@ -83,10 +82,14 @@
                                             <td><img alt="" class="" src="{{$row->FoodCoverPhoto}}" /></td>
                                         </div>
                                         <div class="description">
-                                            <td><h3 class="title">{{$row->FoodName}}</h3></td>
+                                            <td>
+                                                <h3 class="title">{{$row->FoodName}}</h3>
+                                            </td>
                                         </div>
                                         <div class="description">
-                                            <td><h3 class="title">{{$row->FoodPrice}} VNĐ</h3></td>
+                                            <td>
+                                                <h3 class="title">{{$row->FoodPrice}} VNĐ</h3>
+                                            </td>
                                         </div>
                                     </div>
                                 </div>

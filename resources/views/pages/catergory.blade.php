@@ -1,16 +1,16 @@
 @extends('layouts.master-2')
-<?php $imgtest='<?php echo asset('.'img/test.jpg'.')?>'; ?>
+<?php $imgtest = '<?php echo asset(' . 'img/test.jpg' . ')?>'; ?>
 <div class="section section-item ">
     <div class="container">
         <div class="row">
             <div class="col-md-4 col-xs-4">
                 <nav class="nav-sidebar">
                     <ul class="nav">
-                        <li class ="active">
+                        <li class="active">
                             <a href="/menu">Tất cả</a>
                         </li>
                         @foreach($catergory as $row)
-                        <li class ="active">
+                        <li class="active">
                             <a href="/menu/{{$row->FoodCategoryCode_PK}}">{{$row->FoodCategoryName}}</a>
                         </li>
                         @endforeach
