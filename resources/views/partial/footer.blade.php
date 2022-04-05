@@ -71,7 +71,7 @@
                     <nav>
                         <ul>
                             <li>
-                                <a href="#" class="btn btn-social btn-facebook btn-simple">
+                                <a href="https://www.facebook.com/NgoaLongLK/" class="btn btn-social btn-facebook btn-simple">
                                     <i class="fa fa-facebook-square"></i> Facebook
                                 </a>
                             </li>
@@ -88,8 +88,9 @@
         <hr>
         <div class="copyright">
             ©
-            <script> document.write(new Date().getFullYear()) </script> Creation Of Ryuu
+            <script>
+                document.write(new Date().getFullYear())
+            </script> Dev by Dream team
         </div>
     </div>
 </footer>
-
