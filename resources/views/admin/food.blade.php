@@ -12,15 +12,15 @@
         </tr>
     </thead>
     <tbody>
-    @foreach($food as $row)
+        @foreach($food as $row)
         <td>{{$row->FoodCode}}</td>
         <td><a href="/admin/food/{{$row->FoodCode}}">{{$row->FoodName}}</a></td>
-            <td>{{$row->FoodPrice}}</td>
-            <td>{{$row->FoodCategoryName}}</td>
-            <td>{{$row->Status}}</td>
-            <td><a href="/admin/food/edit/{{$row->FoodCode}}">Edit</a> </td>
-            <td><a href="/admin/food/delete/{{$row->FoodCode}}">Delete</a></td>
-            
+        <td>{{$row->FoodPrice}}</td>
+        <td>{{$row->FoodCategoryName}}</td>
+        <td>{{$row->Status}}</td>
+        <td><a href="/admin/food/edit/{{$row->FoodCode}}">Edit</a> </td>
+        <td><a href="/admin/food/delete/{{$row->FoodCode}}">Delete</a></td>
+
         </tr>
         @endforeach
     </tbody>

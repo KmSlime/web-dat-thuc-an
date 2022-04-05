@@ -38,12 +38,8 @@
                   @foreach($foods as $row)
                   <tr>
                     <td>{{$row->FoodCode_PK}}</td>
-                    <td>
-                      {{$row->FoodName}}
-                    </td>
-                    <td>
-                      <img src="{{$row->FoodCoverPhoto}}" />
-                    </td>
+                    <td>{{$row->FoodName}}</td>
+                    <td><img src="{{$row->FoodCoverPhoto}}" /></td>
                     <td>
                       @foreach($fcs as $value)
                       @if($value->FoodCategoryCode_PK == $row->FoodCategoryCode_PFK)
@@ -51,15 +47,10 @@
                       @endif
                       @endforeach
                     </td>
-                    <td>
-                      {{$row->Status}}
-                    </td>
-                    <td>
-                      {{$row->FoodPrice}}
-                    </td>
+                    <td>{{$row->Status}}</td>
+                    <td>{{$row->FoodPrice}}</td>
                     <td>
                       <a href="#"><i class="fas fa-wrench"></i></a>
-
                       <a href="#"><i class="fas fa-times"></i></a>
                     </td>
                   </tr>
