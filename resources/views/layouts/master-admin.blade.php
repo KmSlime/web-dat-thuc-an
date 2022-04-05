@@ -33,80 +33,91 @@
   </style>
 </head>
 
-<body class="hold-transition sidebar-mini">
-<div class="wrapper">
-  <!-- Navbar -->
-  <nav class="main-header navbar navbar-expand navbar-white navbar-light">
-    <!-- Left navbar links -->
-    <ul class="navbar-nav">
-      <li class="nav-item">
-        <a class="nav-link" data-widget="pushmenu" href="#" role="button"><i class="fa fa-bars"></i></a>
-      </li>
-    </ul>
-
-  </nav>
-  <!-- /.navbar -->
-
-  <!-- Main Sidebar Container -->
-  <aside class="main-sidebar sidebar-dark-primary elevation-4">
-    <!-- Brand Logo -->
-    <a href="#" class="brand-link">
-      <span class="brand-text font-weight-light">Admin</span>
-    </a>
-
-    <!-- Sidebar -->
-    <div class="sidebar">
-     
-      <!-- Sidebar Menu -->
-      <nav class="mt-2">
-        <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
-          <!-- Add icons to the links using the .nav-icon class
-               with font-awesome or any other icon font library -->        
+  <body class="hold-transition sidebar-mini">
+    <div class="wrapper">
+      <!-- Navbar -->
+      <nav class="main-header navbar navbar-expand navbar-white navbar-light">
+        <!-- Left navbar links -->
+        <ul class="navbar-nav">
           <li class="nav-item">
-            <a href="#" class="nav-link">
-              <i class="nav-icon fas fa-th"></i>
-              <p>
-               Quản lý thành viên
-              </p>
-            </a>
+            <a class="nav-link" data-widget="pushmenu" href="#" role="button"><i class="fa fa-bars"></i></a>
           </li>
-          <li class="nav-item">
-            <a href="#" class="nav-link">
-              <i class="nav-icon fas fa-copy"></i>
-              <p>
-                Quản lý khách hàng
-              </p>
-            </a>         
-          </li>
-          <li class="nav-item">
-            <a href="#" class="nav-link">
-              <i class="nav-icon fas fa-chart-pie"></i>
-              <p>
-                Quản lý thức ăn
-              </p>
-            </a>         
-          </li>
-          <li class="nav-item">
-            <a href="#" class="nav-link">
-              <i class="nav-icon fas fa-tree"></i>
-              <p>
-                Quản lý thức uống
-              </p>
-            </a>       
-          </li>
-          <li class="nav-item">
-            <a href="#" class="nav-link">
-              <i class="nav-icon fas fa-edit"></i>
-              <p>
-                Quản lý đơn hàng
-              </p>
-            </a>          
         </ul>
+
       </nav>
-      <!-- /.sidebar-menu -->
+      <!-- /.navbar -->
+
+      <!-- Main Sidebar Container -->
+      <aside class="main-sidebar sidebar-dark-primary elevation-4">
+        <!-- Brand Logo -->
+        <a href="#" class="brand-link">
+          <span class="brand-text font-weight-light">Admin</span>
+        </a>
+
+        <!-- Sidebar -->
+        <div class="sidebar">
+
+          <!-- Sidebar Menu -->
+          <nav class="mt-2">
+            <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
+              <!-- Add icons to the links using the .nav-icon class
+               with font-awesome or any other icon font library -->
+              <li class="nav-item">
+                <a href="#" class="nav-link">
+                  <i class="nav-icon fas fa-th"></i>
+                  <p>
+                    Quản lý thành viên
+                  </p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="#" class="nav-link">
+                  <i class="nav-icon fas fa-copy"></i>
+                  <p>
+                    Quản lý khách hàng
+                  </p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="#" class="nav-link">
+                  <i class="nav-icon fas fa-chart-pie"></i>
+                  <p>
+                    Quản lý thức ăn
+                  </p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="#" class="nav-link">
+                  <i class="nav-icon fas fa-tree"></i>
+                  <p>
+                    Quản lý thức uống
+                  </p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="#" class="nav-link">
+                  <i class="nav-icon fas fa-edit"></i>
+                  <p>
+                    Quản lý đơn hàng
+                  </p>
+                </a>
+            </ul>
+          </nav>
+          <!-- /.sidebar-menu -->
+        </div>
+        <!-- /.sidebar -->
+      </aside>
+
+
+      <!-- Control Sidebar -->
+      <aside class="control-sidebar control-sidebar-dark">
+        <!-- Control sidebar content goes here -->
+      </aside>
+      <!-- /.control-sidebar -->
+      @yield('content')
+      <!-- Main Footer -->
     </div>
-    <!-- /.sidebar -->
-  </aside>
+    <!-- ./wrapper -->
 
   @yield('content') 
   <!-- Control Sidebar -->
@@ -120,42 +131,41 @@
 </div>
 <!-- ./wrapper -->
 
-<!-- REQUIRED SCRIPTS -->
-
-<!-- jQuery -->
-<script src="{{asset('js/adminjs/jquery.min.js')}}"></script>
-<!-- Bootstrap -->
-<script src="{{asset('js/adminjs/bootstrap.bundle.min.js')}}"></script>
-<!-- AdminLTE -->
-<script src="{{asset('js/adminjs/adminlte.js')}}"></script>
-<!-- DataTables  & Plugins -->
-<script src="{{asset('js/adminjs/jquery.dataTables.min.js')}}"></script>
-<script src="{{asset('js/adminjs/dataTables.bootstrap4.min.js')}}"></script>
-<script src="{{asset('js/adminjs/dataTables.responsive.min.js')}}"></script>
-<script src="{{asset('js/adminjs/responsive.bootstrap4.min.js')}}"></script>
-<script src="{{asset('js/adminjs/dataTables.buttons.min.js')}}"></script>
-<script src="{{asset('js/adminjs/buttons.bootstrap4.min.js')}}"></script>
-<script src="{{asset('js/adminjs/jszip.min.js')}}"></script>
-<script src="{{asset('js/adminjs/pdfmake.min.js')}}"></script>
-<script src="{{asset('js/adminjs/vfs_fonts.js')}}"></script>
-<script src="{{asset('js/adminjs/buttons.html5.min.js')}}"></script>
-<script src="{{asset('js/adminjs/buttons.print.min.js')}}"></script>
-<script src="{{asset('js/adminjs/buttons.colVis.min.js')}}"></script>
-<!-- AdminLTE for demo purposes -->
-<script src="{{asset('js/adminjs/demo.js')}}"></script>
-<!-- Page specific script -->
-<script>
-    $(function () {    
-      $('data').DataTable({
-        "paging": true,
-        "lengthChange": false,
-        "searching": false,
-        "ordering": true,
-        "info": true,
-        "autoWidth": false,
-        "responsive": true,
+    <!-- jQuery -->
+    <script src="{{asset('js/adminjs/jquery.min.js')}}"></script>
+    <!-- Bootstrap -->
+    <script src="{{asset('js/adminjs/bootstrap.bundle.min.js')}}"></script>
+    <!-- AdminLTE -->
+    <script src="{{asset('js/adminjs/adminlte.js')}}"></script>
+    <!-- DataTables  & Plugins -->
+    <script src="{{asset('js/adminjs/jquery.dataTables.min.js')}}"></script>
+    <script src="{{asset('js/adminjs/dataTables.bootstrap4.min.js')}}"></script>
+    <script src="{{asset('js/adminjs/dataTables.responsive.min.js')}}"></script>
+    <script src="{{asset('js/adminjs/responsive.bootstrap4.min.js')}}"></script>
+    <script src="{{asset('js/adminjs/dataTables.buttons.min.js')}}"></script>
+    <script src="{{asset('js/adminjs/buttons.bootstrap4.min.js')}}"></script>
+    <script src="{{asset('js/adminjs/jszip.min.js')}}"></script>
+    <script src="{{asset('js/adminjs/pdfmake.min.js')}}"></script>
+    <script src="{{asset('js/adminjs/vfs_fonts.js')}}"></script>
+    <script src="{{asset('js/adminjs/buttons.html5.min.js')}}"></script>
+    <script src="{{asset('js/adminjs/buttons.print.min.js')}}"></script>
+    <script src="{{asset('js/adminjs/buttons.colVis.min.js')}}"></script>
+    <!-- AdminLTE for demo purposes -->
+    <script src="{{asset('js/adminjs/demo.js')}}"></script>
+    <!-- Page specific script -->
+    <script>
+      $(function() {
+        $('data').DataTable({
+          "paging": true,
+          "lengthChange": false,
+          "searching": false,
+          "ordering": true,
+          "info": true,
+          "autoWidth": false,
+          "responsive": true,
+        });
       });
-    });
-  </script>
-</body>
-</html>
+    </script>
+  </body>
+
+  </html>

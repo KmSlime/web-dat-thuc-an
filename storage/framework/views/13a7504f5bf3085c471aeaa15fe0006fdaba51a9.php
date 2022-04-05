@@ -1,3 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    
+    <meta charset="utf-8" />
+    <link rel="apple-touch-icon" sizes="76x76" href="<?php echo asset('img/apple-icon.png') ?>">
+    <link rel="icon" type="<?php echo asset('image/png') ?>" sizes="96x96" href="<?php echo asset('img/favicon.png') ?>">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0' name='viewport' />
+    <link rel="stylesheet" href="<?php echo asset('css/gaia.css') ?>">
+    <link rel="stylesheet" href="<?php echo asset('css/bootstrap.css') ?>">
+    <!--     Fonts and icons     -->
+    <link href='https://fonts.googleapis.com/css?family=Cambo|Poppins:400,600' rel='stylesheet' type='text/css'>
+    <link href="http://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="<?php echo asset('css/fonts/pe-icon-7-stroke.css') ?>" type="text/css">
+</head>
+
+<body>
     <!--   core js files    -->
     <!--header-->
     <nav class="navbar navbar-default navbar-fixed-top" color-on-scroll="200">
@@ -18,10 +37,10 @@
             <div class="collapse navbar-collapse">
                 <ul class="nav navbar-nav navbar-left navbar-uppercase">
                     <li>
-                        <a href="/home">Trang chủ</a>
+                        <a href="#" target="_blank">Trang chủ</a>
                     </li>
                     <li>
-                            <a href="/menu">Menu</a>
+                        <a href="#" target="_blank">Menu</a>
                     </li>
                     <li>
                         <a href="#" target="_blank">Chuỗi nhà hàng</a>
@@ -73,10 +92,9 @@
                 </div>
             </div>
             <div class="user_login">
-                <form enctype="multipart/form-data" method="post">
-                    @csrf <!-- {{ csrf_field() }} -->
-                    <label>Email / Username</label> <input type="text" name="email"><br>
-                    <label>Password</label> <input type="password" name="password"><br>
+                <form>
+                    <label>Email / Username</label> <input type="text"><br>
+                    <label>Password</label> <input type="password"><br>
 
                     <div class="checkbox">
                         <input id="remember" type="checkbox"> <label for="remember">Remember me on this computer</label>
@@ -86,8 +104,9 @@
                         <div class="one_half">
                             <a class="btn back_btn" href="#">Back</a>
                         </div>
+
                         <div class="one_half last">
-                            <button class="btn btn_red" type="submit" name="Login">Login</button>
+                            <a class="btn btn_red" href="#">Login</a>
                         </div>
                     </div>
                 </form>
@@ -95,14 +114,14 @@
                 <a class="forgot_password" href="#">Forgot password?</a>
             </div>
             <div class="user_register">
-                <form action="register" method="post">
-                    <input type="hidden" name="_token" value="{{ csrf_token() }}"/>
-                    <label>Email Address</label> <input type="email" name="email"><br>
-                    <label>Password</label> <input type="password" name="password"><br>
-{{-- 
+                <form>
+                    <label>Full Name</label> <input type="text"><br>
+                    <label>Email Address</label> <input type="email"><br>
+                    <label>Password</label> <input type="password"><br>
+
                     <div class="checkbox">
                         <input id="send_updates" type="checkbox"> <label for="send_updates">Send me occasional email updates</label>
-                    </div> --}}
+                    </div>
 
                     <div class="action_btns">
                         <div class="one_half">
@@ -110,10 +129,11 @@
                         </div>
 
                         <div class="one_half last">
-                            <button class="btn btn_red" type="submit" >Register</button>
+                            <a class="btn btn_red" href="#">Register</a>
                         </div>
                     </div>
                 </form>
             </div>
         </section>
     </div>
+<?php echo $__env->make('layouts.master-header', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?><?php /**PATH K:\projects\xampp\htdocs\dat-thuc-an\resources\views/pages/header.blade.php ENDPATH**/ ?>
