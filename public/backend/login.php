@@ -3,5 +3,4 @@
     {
         $userName = $_POST['user'];
         $passWord = $_POST['pass'];
-        
     }

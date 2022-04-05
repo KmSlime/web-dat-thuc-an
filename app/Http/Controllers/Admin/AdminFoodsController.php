@@ -54,7 +54,11 @@ class AdminFoodsController extends Controller
     /**
      * Display the specified resource.
      *
+<<<<<<< HEAD
+     * @param  int $id
+=======
      * @param  int  $id
+>>>>>>> TQuynh
      * @return \Illuminate\Http\Response
      */
     public function show($FoodCode)
