@@ -54,7 +54,7 @@ class HomeController extends Controller
         if (($loginuser->count()) > 0) {
             foreach ($loginuser as $key) {
                 if (($key->PermissionID_PFK) == 1) {
-                    return view('pages.indexh', compact('listFood', 'loginuser'));
+                    return view('pages.admin', compact('listFood', 'loginuser'));
                 } else {
                     return view('pages.index', compact('listFood', 'loginuser'));
                 }
