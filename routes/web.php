@@ -16,4 +16,5 @@ Route::get('/home','App\Http\Controllers\HomeController@getHome');
 Route::post('/home','App\Http\Controllers\HomeController@postLogin');
 
 //thêm - sửa - xoá admin
-Route::get('/admin/foodcatergory','App\Http\Controllers\Admin\AdminFCController@Index');
+Route::get('/admin/foodcatergory','App\Http\Controllers\Admin\FCController@index');
+Route::get('/admin/food','App\Http\Controllers\Admin\FoodController@index');

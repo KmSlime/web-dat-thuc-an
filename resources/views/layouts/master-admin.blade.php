@@ -1,4 +1,4 @@
-<{{asset('!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="utf-8">
@@ -9,7 +9,7 @@
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
 
   <!-- Font Awesome Icons -->
-  <link href="{{asset('assets/fonts/fontawesome-free/css/all.min.css')}}" rel="stylesheet">
+  <link rel="stylesheet" href="{{ asset('fonts/fontawesome-free/css/all.min.css') }}" >
 
   <!-- DataTables -->
   <link rel="stylesheet" href="{{asset('css/admincss/dataTables.bootstrap4.min.css')}}">
@@ -97,14 +97,15 @@
     <!-- /.sidebar -->
   </aside>
 
-        
+  @yield('content') 
   <!-- Control Sidebar -->
   <aside class="control-sidebar control-sidebar-dark">
     <!-- Control sidebar content goes here -->
   </aside>
   <!-- /.control-sidebar -->
-  @yield('content') 
+ 
   <!-- Main Footer -->
+ 
 </div>
 <!-- ./wrapper -->
 
