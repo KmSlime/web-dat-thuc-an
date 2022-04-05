@@ -19,10 +19,6 @@
   <!-- IonIcons -->
   <link rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
   <!-- Theme style -->
-<<<<<<< HEAD
-  <link rel="stylesheet" href="{{asset('css/admincss/adminlte.min.css')}}">
-  </head>
-=======
   <link rel="stylesheet" href= "{{asset('css/admincss/adminlte.min.css')}}">
   <style>
       img{
@@ -36,7 +32,6 @@
       }
   </style>
 </head>
->>>>>>> 5175b9336a011ec76b7df2499d1004326d558502
 
   <body class="hold-transition sidebar-mini">
     <div class="wrapper">
@@ -124,9 +119,6 @@
     </div>
     <!-- ./wrapper -->
 
-<<<<<<< HEAD
-    <!-- REQUIRED SCRIPTS -->
-=======
   @yield('content') 
   <!-- Control Sidebar -->
   <aside class="control-sidebar control-sidebar-dark">
@@ -138,7 +130,6 @@
  
 </div>
 <!-- ./wrapper -->
->>>>>>> 5175b9336a011ec76b7df2499d1004326d558502
 
     <!-- jQuery -->
     <script src="{{asset('js/adminjs/jquery.min.js')}}"></script>
