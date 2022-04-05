@@ -1,4 +1,15 @@
 @extends('layouts.master')
+<?php
+if (isset($loginuser)){
+    ob_start();
+    session_start();
+    foreach ($loginuser as $key) {
+        $_SESSION['id_login'] = $key ->UserID_PK;
+        echo $_SESSION['id_login'];
+    }
+}
+?>
+
 <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
     <!-- Indicators -->
     <ol class="carousel-indicators">
@@ -82,14 +93,10 @@
                                             <td><img alt="" class="" src="{{$row->FoodCoverPhoto}}" /></td>
                                         </div>
                                         <div class="description">
-                                            <td>
-                                                <h3 class="title">{{$row->FoodName}}</h3>
-                                            </td>
+                                            <td><h3 class="title">{{$row->FoodName}}</h3></td>
                                         </div>
                                         <div class="description">
-                                            <td>
-                                                <h3 class="title">{{$row->FoodPrice}} VNĐ</h3>
-                                            </td>
+                                            <td><h3 class="title">{{$row->FoodPrice}} VNĐ</h3></td>
                                         </div>
                                     </div>
                                 </div>

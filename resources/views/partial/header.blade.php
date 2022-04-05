@@ -93,9 +93,8 @@
                 </div>
             </div>
             <div class="user_login">
-                <form enctype="multipart/form-data" method="post">
-                    @csrf
-                    <!-- {{ csrf_field() }} -->
+                <form action="login" method="post">
+                    <input type="hidden" name="_token" value="{{ csrf_token() }}"/>
                     <label>Email / Username</label> <input type="text" name="email"><br>
                     <label>Password</label> <input type="password" name="password"><br>
 
@@ -117,10 +116,10 @@
             </div>
             <div class="user_register">
                 <form action="register" method="post">
-                    <input type="hidden" name="_token" value="{{ csrf_token() }}" />
+                    <input type="hidden" name="_token" value="{{ csrf_token() }}"/>
                     <label>Email Address</label> <input type="email" name="email"><br>
                     <label>Password</label> <input type="password" name="password"><br>
-                    {{--
+{{-- 
                     <div class="checkbox">
                         <input id="send_updates" type="checkbox"> <label for="send_updates">Send me occasional email updates</label>
                     </div> --}}
@@ -131,7 +130,7 @@
                         </div>
 
                         <div class="one_half last">
-                            <button class="btn btn_red" type="submit">Register</button>
+                            <button class="btn btn_red" type="submit" >Register</button>
                         </div>
                     </div>
                 </form>
