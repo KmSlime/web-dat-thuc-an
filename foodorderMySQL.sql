@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Máy chủ: 127.0.0.1
--- Thời gian đã tạo: Th4 04, 2022 lúc 12:26 AM
+-- Thời gian đã tạo: Th4 05, 2022 lúc 04:19 PM
 -- Phiên bản máy phục vụ: 10.4.22-MariaDB
 -- Phiên bản PHP: 8.1.2
 
@@ -432,6 +432,82 @@ ALTER TABLE `users`
   ADD KEY `PermissionID_PFK` (`PermissionID_PFK`),
   ADD KEY `CustomerID_FK` (`CustomerID_FK`),
   ADD KEY `StaffID_FK` (`StaffID_FK`);
+
+--
+-- AUTO_INCREMENT cho các bảng đã đổ
+--
+
+--
+-- AUTO_INCREMENT cho bảng `customer`
+--
+ALTER TABLE `customer`
+  MODIFY `CustomerID_PK` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+
+--
+-- AUTO_INCREMENT cho bảng `delivery`
+--
+ALTER TABLE `delivery`
+  MODIFY `DeliveryCode_PK` int(11) NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT cho bảng `drinks`
+--
+ALTER TABLE `drinks`
+  MODIFY `DrinkCode_PK` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
+
+--
+-- AUTO_INCREMENT cho bảng `drink_categories`
+--
+ALTER TABLE `drink_categories`
+  MODIFY `DrinkCategoryCode_PK` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+
+--
+-- AUTO_INCREMENT cho bảng `food`
+--
+ALTER TABLE `food`
+  MODIFY `FoodCode_PK` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
+
+--
+-- AUTO_INCREMENT cho bảng `food_categories`
+--
+ALTER TABLE `food_categories`
+  MODIFY `FoodCategoryCode_PK` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+
+--
+-- AUTO_INCREMENT cho bảng `orderbill`
+--
+ALTER TABLE `orderbill`
+  MODIFY `OrderCode_PK` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+
+--
+-- AUTO_INCREMENT cho bảng `order_details`
+--
+ALTER TABLE `order_details`
+  MODIFY `OrderDetailsCode_PK` int(11) NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT cho bảng `permission`
+--
+ALTER TABLE `permission`
+  MODIFY `PermissionID_PK` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+
+--
+-- AUTO_INCREMENT cho bảng `services`
+--
+ALTER TABLE `services`
+  MODIFY `ServiceCode_PK` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+
+--
+-- AUTO_INCREMENT cho bảng `staff`
+--
+ALTER TABLE `staff`
+  MODIFY `StaffID_PK` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+
+--
+-- AUTO_INCREMENT cho bảng `users`
+--
+ALTER TABLE `users`
+  MODIFY `UserID_PK` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- Các ràng buộc cho các bảng đã đổ
