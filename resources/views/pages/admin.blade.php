@@ -1,27 +1,27 @@
 @extends('layouts.master-admin')
 <div class="content-wrapper">
-    <!-- Content Header (Page header) -->
-    <section class="content-header">
-      <div class="container-fluid">
-        <div class="row mb-2">
-          <div class="col-sm-6">
-            <h1>Quản lý thức ăn</h1>
-          </div>    
+  <!-- Content Header (Page header) -->
+  <section class="content-header">
+    <div class="container-fluid">
+      <div class="row mb-2">
+        <div class="col-sm-6">
+          <h1>Quản lý thức ăn</h1>
         </div>
-      </div><!-- /.container-fluid -->
-    </section>
-<section class="content">
-      <div class="container-fluid">
-        <div class="row">
-          <div class="col-12">
-            <div class="card">
-              <div class="card-header">          
-              </div>
-              <!-- /.card-header -->
-              <div class="card-body">
-                 <button class=" btn btn-primary" style="float:right; margin-right: 10px; width: 100px;">thêm</button>
-                <table id="data" class="table table-bordered table-hover">
-                  <thead>
+      </div>
+    </div><!-- /.container-fluid -->
+  </section>
+  <section class="content">
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-12">
+          <div class="card">
+            <div class="card-header">
+            </div>
+            <!-- /.card-header -->
+            <div class="card-body">
+              <button class=" btn btn-primary" style="float:right; margin-right: 10px; width: 100px;">thêm</button>
+              <table id="data" class="table table-bordered table-hover">
+                <thead>
                   <tr>
                     <th>ID</th>
                     <th>Tên món ăn</th>
@@ -30,72 +30,72 @@
                     <th>Giá tiền</th>
                     <th>Tác vụ</th>
                   </tr>
-                  </thead>
-                  <tbody>
+                </thead>
+                <tbody>
                   <tr>
                     <td>1</td>
                     <td>
-                       Gà chiên 
+                      Gà chiên
                     </td>
                     <td></td>
                     <td>ngon</td>
                     <td>12000đ</td>
                     <td>
-                        <i class="fas fa-wrench"></i>
+                      <i class="fas fa-wrench"></i>
 
-                        <i class="fas fa-times"></i>                    
+                      <i class="fas fa-times"></i>
                     </td>
                   </tr>
                   <tr>
                     <td>1</td>
                     <td>
-                       Gà chiên 
+                      Gà chiên
                     </td>
                     <td>chưa có</td>
                     <td>ngon</td>
                     <td>12000đ</td>
                     <td>
-                        <i class="fas fa-wrench"></i>
-                        <i class="fas fa-times"></i>                    
+                      <i class="fas fa-wrench"></i>
+                      <i class="fas fa-times"></i>
                     </td>
                   </tr>
                   <tr>
                     <td>1</td>
                     <td>
-                       Gà chiên 
+                      Gà chiên
                     </td>
                     <td>chưa có</td>
                     <td>ngon</td>
                     <td>12000đ</td>
                     <td>
-                        <i class="fas fa-wrench"></i>
+                      <i class="fas fa-wrench"></i>
 
-                        <i class="fas fa-times"></i>                    
+                      <i class="fas fa-times"></i>
                     </td>
                   </tr>
                   <tr>
                     <td>1</td>
                     <td>
-                       Gà chiên 
+                      Gà chiên
                     </td>
                     <td>chưa có</td>
                     <td>ngon</td>
                     <td>12000đ</td>
                     <td>
-                        <i class="fas fa-wrench"></i>
-                        <i class="fas fa-times"></i>                    
+                      <i class="fas fa-wrench"></i>
+                      <i class="fas fa-times"></i>
                     </td>
-                  </tr>           
-                  </tbody>           
-                </table>
-              </div>
-              <!-- /.card-body -->
+                  </tr>
+                </tbody>
+              </table>
             </div>
-            <!-- /.card -->   
+            <!-- /.card-body -->
           </div>
-          <!-- /.col -->
+          <!-- /.card -->
         </div>
-        <!-- /.row -->
+        <!-- /.col -->
       </div>
-      <!-- /.container-fluid -->
-    </section>
+      <!-- /.row -->
+    </div>
+    <!-- /.container-fluid -->
+  </section>
