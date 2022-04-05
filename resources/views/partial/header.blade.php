@@ -1,26 +1,20 @@
-<<<<<<< HEAD:resources/views/pages/header.blade.php
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-    @extends('layouts.master-header')
-    <meta charset="utf-8" />
-    <link rel="apple-touch-icon" sizes="76x76" href="<?php echo asset('img/apple-icon.png') ?>">
-    <link rel="icon" type="<?php echo asset('image/png') ?>" sizes="96x96" href="<?php echo asset('img/favicon.png') ?>">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
-    <meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0' name='viewport' />
-    <link rel="stylesheet" href="<?php echo asset('css/gaia.css') ?>">
-    <link rel="stylesheet" href="<?php echo asset('css/bootstrap.css') ?>">
-    <!--     Fonts and icons     -->
-    <link href='https://fonts.googleapis.com/css?family=Cambo|Poppins:400,600' rel='stylesheet' type='text/css'>
-    <link href="http://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="<?php echo asset('css/fonts/pe-icon-7-stroke.css') ?>" type="text/css">
-</head>
-
+<?php
+    if(isset($enLogout) && session_start()==true)
+    {
+            $enLogout = false;
+            session_destroy();
+    }
+   session_start();
+   if(isset($loginuser))
+   {
+       foreach ($loginuser as $key){
+            $_SESSION['Username'] =$key->Username;
+        }
+   }
+   
+   
+?>
 <body>
-=======
-
->>>>>>> 56d8e680b6fe07adb45b44db789c1c7a77f88ed4:resources/views/partial/header.blade.php
     <!--   core js files    -->
     <!--header-->
     <nav class="navbar navbar-default navbar-fixed-top" color-on-scroll="200">
@@ -44,7 +38,7 @@
                         <a href="/home">Trang chủ</a>
                     </li>
                     <li>
-                            <a href="/menu">Menu</a>
+                        <a href="/menu">Menu</a>
                     </li>
                     <li>
                         <a href="#" target="_blank">Chuỗi nhà hàng</a>
@@ -56,10 +50,24 @@
                         <button type="submit" class="btn btn-default">tìm kiếm</button>
                     </form>
                     <li>
-                        <a id="modal_trigger" href="#modal">Đăng nhập</a>
+                        <?php
+                         if (isset($_SESSION['Username'])) {
+                            echo "<a id="."modal_trigger"." href="."#modal".">".$_SESSION['Username']."</a>";
+                            echo "<li><a id="."modal_trigger"." href="."/logout".">Đăng xuất</a></li>";
+                        } else {
+                            echo "<a id="."modal_trigger"." href="."#modal".">Đăng nhập</a>";
+                        }
+                        ?>
                     </li>
                     <li>
-                        <a href="#" target="_blank">giỏ hàng</a>
+                        <?php
+                        if (isset($_SESSION['Username'])) {
+                            echo "<a id="."modal_trigger"." href="."#modal".">Giỏ hàng</a>"; //chuyển tới đường link deli
+                        }
+                        else {
+                            echo "<a id="."modal_trigger"." href="."#modal".">Giỏ hàng</a>";// gọi lại form đăng nhập
+                        }
+                        ?>
                     </li>
                 </ul>
 
@@ -96,8 +104,8 @@
                 </div>
             </div>
             <div class="user_login">
-                <form enctype="multipart/form-data" method="post">
-                    @csrf <!-- {{ csrf_field() }} -->
+                <form action="login" method="post">
+                    <input type="hidden" name="_token" value="{{ csrf_token() }}"/>
                     <label>Email / Username</label> <input type="text" name="email"><br>
                     <label>Password</label> <input type="password" name="password"><br>
 
@@ -140,3 +148,4 @@
             </div>
         </section>
     </div>
+</body>

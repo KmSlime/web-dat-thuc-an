@@ -6,11 +6,11 @@
             <div class="col-md-4 col-xs-4">
                 <nav class="nav-sidebar">
                     <ul class="nav">
-                        <li class="active">
+                        <li class ="active">
                             <a href="/menu">Tất cả</a>
                         </li>
                         @foreach($catergory as $row)
-                        <li class="active">
+                        <li class ="active">
                             <a href="/menu/{{$row->FoodCategoryCode_PK}}">{{$row->FoodCategoryName}}</a>
                         </li>
                         @endforeach
