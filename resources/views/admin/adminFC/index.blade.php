@@ -36,10 +36,10 @@
                     <td>
                         {{$row->FoodCategoryName}}
                     </td>
-                    <td class="task" style="float:right">
-                        <i class="fas fa-wrench"></i>
+                    <td>
+                       <a href="#"><i class="fas fa-wrench"></i></a>
 
-                        <i class="fas fa-times"></i>                    
+                        <a href="#"><i class="fas fa-times"></i></a>                    
                     </td>
                   </tr>
                   @endforeach

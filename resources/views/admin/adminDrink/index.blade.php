@@ -26,20 +26,41 @@
                   <thead>
                   <tr>
                     <th>ID</th>
-                    <th>Tên loại món ăn</th>         
+                    <th>Tên đồ uống</th>     
+                    <th>ảnh đồ uống</th> 
+                    <th>loại đồ uống</th> 
+                    <th>Tình trạng</th>
+                    <th>Giá tiền</th>     
+                    <th>Tác vụ</th>              
                   </tr>
                   </thead>
                   <tbody>
-                  @foreach($fcs as $row)
+                  @foreach($drinks as $row)
                   <tr>                 
-                    <td>{{$row->FoodCode_PK}}</td>
+                    <td>{{$row->DrinkCode_PK}}</td>
                     <td>
-                        {{$row->FoodCategoryName}}
+                        {{$row->DrinkName}}
                     </td>
-                    <td class="task" style="float:right">
-                        <i class="fas fa-wrench"></i>
+                    <td>
+                        <img src="{{$row->DrinkCoverPhoto}}" />
+                    </td>
+                    <td>
+                        @foreach($dcs as $value)
+                          @if($value->DrinkCategoryCode_PK == $row->DrinkCategoryCode_PFK)
+                            {{$value->DrinkCategoryName}}
+                         @endif
+                       @endforeach
+                    </td>
+                    <td>
+                      {{$row->Status}}
+                    </td>
+                    <td>
+                      {{$row->DrinkPrice}}
+                    </td>
+                    <td>
+                       <a href="#"><i class="fas fa-wrench"></i></a>
 
-                        <i class="fas fa-times"></i>                    
+                        <a href="#"><i class="fas fa-times"></i></a>                    
                     </td>
                   </tr>
                   @endforeach

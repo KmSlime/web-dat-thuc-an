@@ -1,5 +1,6 @@
 @extends('layouts.master-adminform')
 @section('title','Thêm')
+@section('content')
 <div class="content-wrapper">
     <!-- Content Header (Page header) -->
     <section class="content-header">
@@ -15,7 +16,7 @@
 <div class="content-wrapper">
     <!-- Content Header (Page header) -->
     <section class="content-header">
-      <div class="container-fluid">
+      <div class="container-fluid">A
         <div class="row mb-2">
           <div class="col-sm-6">
             <h1>Quản lý thể loại thức ăn</h1>
@@ -78,3 +79,4 @@
       <!-- /.content -->
     </div>
     <!-- /.content-wrapper -->
+    @endsection

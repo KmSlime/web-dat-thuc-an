@@ -1,5 +1,6 @@
 @extends('layouts.master-adminform')
 @section('title','Thêm')
+@section('content')
 <div class="content-wrapper">
     <!-- Content Header (Page header) -->
     <section class="content-header">
@@ -78,3 +79,4 @@
       <!-- /.content -->
     </div>
     <!-- /.content-wrapper -->
+    @endsection

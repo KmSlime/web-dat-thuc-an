@@ -26,37 +26,32 @@
                   <thead>
                   <tr>
                     <th>ID</th>
-                    <th>Tên món ăn</th>     
-                    <th>ảnh món ăn</th> 
-                    <th>loại món ăn</th> 
-                    <th>Tình trạng</th>
-                    <th>Giá tiền</th>     
-                    <th>Tác vụ</th>              
+                    <th>Họ nhân viên</th>     
+                    <th>Tên nhân viên</th> 
+                    <th>Địa chỉ</th> 
+                    <th>Điện thoại</th>
+                    <th>Email</th>       
                   </tr>
                   </thead>
                   <tbody>
-                  @foreach($foods as $row)
+                  @foreach($staffs as $row)
                   <tr>                 
-                    <td>{{$row->FoodCode_PK}}</td>
+                    <td>{{$row->StaffID_PK}}</td>
                     <td>
-                        {{$row->FoodName}}
+                        {{$row->StaffLastName}}
                     </td>
                     <td>
-                        <img src="{{$row->FoodCoverPhoto}}" />
+                        {{$row->StaffFirstName}}
                     </td>
                     <td>
-                        @foreach($fcs as $value)
-                          @if($value->FoodCategoryCode_PK == $row->FoodCategoryCode_PFK)
-                            {{$value->FoodCategoryName}}
-                         @endif
-                       @endforeach
+                        {{$row->StaffAddress}}
+                    </td>                   
+                    <td>
+                      {{$row->StaffPhoneContact}}
                     </td>
                     <td>
-                      {{$row->Status}}
+                      {{$row->StaffEmail}}
                     </td>
-                    <td>
-                      {{$row->FoodPrice}}
-                    </td>                  
                     <td>
                        <a href="#"><i class="fas fa-wrench"></i></a>
 

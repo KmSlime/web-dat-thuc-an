@@ -20,6 +20,17 @@
   <link rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
   <!-- Theme style -->
   <link rel="stylesheet" href= "{{asset('css/admincss/adminlte.min.css')}}">
+  <style>
+      img{
+        width: 200px;
+        height: 200px;
+        object-fit: cover;
+      }
+      .task{
+        display: flex;
+        width:100px
+      }
+  </style>
 </head>
 
 <body class="hold-transition sidebar-mini">

@@ -26,37 +26,28 @@
                   <thead>
                   <tr>
                     <th>ID</th>
-                    <th>Tên món ăn</th>     
-                    <th>ảnh món ăn</th> 
-                    <th>loại món ăn</th> 
-                    <th>Tình trạng</th>
-                    <th>Giá tiền</th>     
-                    <th>Tác vụ</th>              
+                    <th>Tài khoản</th>     
+                    <th>Mật khảu</th> 
+                    <th>Quyền</th>        
                   </tr>
                   </thead>
                   <tbody>
-                  @foreach($foods as $row)
+                  @foreach($users as $row)
                   <tr>                 
-                    <td>{{$row->FoodCode_PK}}</td>
+                    <td>{{$row->UserID_PK }}</td>
                     <td>
-                        {{$row->FoodName}}
+                        {{$row->Username}}
+                    </td> 
+                    <td>
+                        {{$row->Password}}
                     </td>
                     <td>
-                        <img src="{{$row->FoodCoverPhoto}}" />
-                    </td>
-                    <td>
-                        @foreach($fcs as $value)
-                          @if($value->FoodCategoryCode_PK == $row->FoodCategoryCode_PFK)
-                            {{$value->FoodCategoryName}}
+                        @foreach($pss as $value)
+                          @if($value->PermissionID_PK  == $row->PermissionID_PFK )
+                            {{$value->PermissionDescription}}
                          @endif
                        @endforeach
-                    </td>
-                    <td>
-                      {{$row->Status}}
-                    </td>
-                    <td>
-                      {{$row->FoodPrice}}
-                    </td>                  
+                    </td>             
                     <td>
                        <a href="#"><i class="fas fa-wrench"></i></a>
 

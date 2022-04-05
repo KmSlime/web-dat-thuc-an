@@ -8,7 +8,7 @@ use Illuminate\Support\Facades\DB;
 use App\Models\food;
 use App\Models\food_categories;
 
-class FoodController extends Controller
+class DCController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -17,9 +17,8 @@ class FoodController extends Controller
      */
     public function index()
     {
-        $foods = DB::table('food')->select('*')->paginate(10);
-        $fcs = DB::table('food_categories')->select('*')->get();
-        return view('admin/adminFood/index', compact('foods','fcs'));
+        $dcs = DB::table('drink_categories')->select('*')->get();
+        return view('admin/adminDC/index', compact('dcs'));
     }
 
     /**

@@ -26,20 +26,20 @@
                   <thead>
                   <tr>
                     <th>ID</th>
-                    <th>Tên loại món ăn</th>         
+                    <th>Tên loại uống</th>         
                   </tr>
                   </thead>
                   <tbody>
-                  @foreach($fcs as $row)
+                  @foreach($dcs as $row)
                   <tr>                 
-                    <td>{{$row->FoodCategoryCode_PK}}</td>
+                    <td>{{$row->DrinkCategoryCode_PK}}</td>
                     <td>
-                        {{$row->FoodCategoryName}}
+                        {{$row->DrinkCategoryName}}
                     </td>
-                    <td class="task" style="float:right">
-                        <i class="fas fa-wrench"></i>
+                    <td>
+                       <a href="#"><i class="fas fa-wrench"></i></a>
 
-                        <i class="fas fa-times"></i>                    
+                        <a href="#"><i class="fas fa-times"></i></a>                    
                     </td>
                   </tr>
                   @endforeach
