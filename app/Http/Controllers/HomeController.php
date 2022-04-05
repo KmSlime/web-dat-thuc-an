@@ -18,7 +18,13 @@ class HomeController extends Controller
         $listFood = $listFood->get();
         return view('pages.index', compact('listFood'));
     }
-
+    public function getLogout()
+    {
+        $listFood = DB::table('food')->select('*');
+        $listFood = $listFood ->get();
+        $enLogout = true;
+        return view('pages.index',compact('listFood','enLogout'));
+    }
     public function getMenu($idcatergory)
     {
         $catergory = DB::table('food_categories')->select('*');
@@ -41,9 +47,9 @@ class HomeController extends Controller
     }
 
     public function postLogin(Request $request)
-    {
-        $foods = DB::table('food')->select('*');
-        $listFood = $foods->get();
+    {   
+        $listFood = DB::table('food')->select('*');
+        $listFood = $listFood ->get();
         $arr = [
             'email' => $request->email,
             'password' => $request->password,
@@ -51,12 +57,17 @@ class HomeController extends Controller
         $loginuser = DB::table('users')->select('*');
         $loginuser = User::where('Username', '=', $arr['email'])->where('Password', '=', $arr['password'])->select('*');
         $loginuser = $loginuser->get();
-        if (($loginuser->count()) > 0) {
-            foreach ($loginuser as $key) {
-                if (($key->PermissionID_PFK) == 1) {
-                    return view('pages.admin', compact('listFood', 'loginuser'));
-                } else {
-                    return view('pages.index', compact('listFood', 'loginuser'));
+        if(($loginuser->count())>0)
+        {
+            foreach($loginuser as $key)
+            {
+                if(($key->PermissionID_PFK)==1)
+                {
+                    return view('pages.admin',compact('listFood','loginuser'));
+                }
+                else 
+                {
+                    return view('pages.index',compact('listFood','loginuser'));
                 }
             }
         } else {

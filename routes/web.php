@@ -15,6 +15,7 @@ use Illuminate\Support\Facades\Route;
 Route::get('/home','App\Http\Controllers\HomeController@getHome');
 Route::post('/home','App\Http\Controllers\HomeController@postLogin');
 Route::get('/menu','App\Http\Controllers\HomeController@getAll');
+Route::get('/logout','App\Http\Controllers\HomeController@getLogout');
 Route::get('/menu/{idcatergory}','App\Http\Controllers\HomeController@getMenu');
 //login
 Route::post('login', 'App\Http\Controllers\HomeController@postLogin');

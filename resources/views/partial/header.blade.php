@@ -1,3 +1,19 @@
+<?php
+    if(isset($enLogout) && session_start()==true)
+    {
+            $enLogout = false;
+            session_destroy();
+    }
+   session_start();
+   if(isset($loginuser))
+   {
+       foreach ($loginuser as $key){
+            $_SESSION['Username'] =$key->Username;
+        }
+   }
+   
+   
+?>
 <body>
     <!--   core js files    -->
     <!--header-->
@@ -34,10 +50,24 @@
                         <button type="submit" class="btn btn-default">tìm kiếm</button>
                     </form>
                     <li>
-                        <a id="modal_trigger" href="#modal">Đăng nhập</a>
+                        <?php
+                         if (isset($_SESSION['Username'])) {
+                            echo "<a id="."modal_trigger"." href="."#modal".">".$_SESSION['Username']."</a>";
+                            echo "<li><a id="."modal_trigger"." href="."/logout".">Đăng xuất</a></li>";
+                        } else {
+                            echo "<a id="."modal_trigger"." href="."#modal".">Đăng nhập</a>";
+                        }
+                        ?>
                     </li>
                     <li>
-                        <a href="#" target="_blank">giỏ hàng</a>
+                        <?php
+                        if (isset($_SESSION['Username'])) {
+                            echo "<a id="."modal_trigger"." href="."#modal".">Giỏ hàng</a>"; //chuyển tới đường link deli
+                        }
+                        else {
+                            echo "<a id="."modal_trigger"." href="."#modal".">Giỏ hàng</a>";// gọi lại form đăng nhập
+                        }
+                        ?>
                     </li>
                 </ul>
 
