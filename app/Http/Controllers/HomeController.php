@@ -47,15 +47,9 @@ class HomeController extends Controller
     }
 
     public function postLogin(Request $request)
-<<<<<<< HEAD
-    {   
-        $listFood = DB::table('food')->select('*');
-        $listFood = $listFood ->get();
-=======
     {
         $listFood = DB::table('food')->select('*');
         $listFood = $listFood->get();
->>>>>>> parent of a22119d (food show)
         $arr = [
             'email' => $request->email,
             'password' => $request->password,
@@ -66,7 +60,7 @@ class HomeController extends Controller
         if (($loginuser->count()) > 0) {
             foreach ($loginuser as $key) {
                 if (($key->PermissionID_PFK) == 1) {
-                    return view('pages.index', compact('listFood', 'loginuser'));
+                    return view('pages.admin', compact('listFood', 'loginuser'));
                 } else {
                     return view('pages.index', compact('listFood', 'loginuser'));
                 }
