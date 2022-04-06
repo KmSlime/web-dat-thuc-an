@@ -39,14 +39,14 @@ class FCController extends Controller
      */
     public function store(Request $request)
     {
+        return dd('dd');
         $storeData = $request->validate([
             'name' => 'required|max:255'
         ]);
 
         $fcs = food_categories::create($storeData);
-        return redirect('/admin/foodcatergories')->
+        return redirect('/admin/foodcatergory')->with('Complete', 'Create Food Category is success!');
     }
-
 
     /**
      * Show the form for editing the specified resource.
@@ -54,9 +54,11 @@ class FCController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($FoodCode)
+    public function edit($id)
     {
-        
+        $fc  = food_categories::findOrFail($id);
+        return view('/admin/adminFC/index', compact('fc'));
+
     }
 
     /**
@@ -66,8 +68,14 @@ class FCController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $FoodCode)
+    public function update(Request $request, $id)
     {
+        $updateData = $request->validate([
+            'name' => 'required|max:255',
+            
+        ]);
+        food_categories::whereId($id)->update($updateData);
+        return redirect('/admin/foodcatergory')->with('completed', 'Food Category has been updated');
         
     }
 
@@ -77,8 +85,11 @@ class FCController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($FoodCode)
+    public function destroy($id)
     {
-       
+        $fc  = food_categories::findOrFail($id);
+        $fc->delete();
+        return redirect('/admin/foodcatergory')->with('completed', ' Food Category has been deleted');
+
     }
 }

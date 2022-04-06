@@ -7,7 +7,7 @@
       <div class="container-fluid">
         <div class="row mb-2">
           <div class="col-sm-6">
-            <h1>Quản lý  loại thực phẩm</h1>
+            <h1>Quản lý  nhân viên</h1>
           </div>    
         </div>
       </div><!-- /.container-fluid -->
@@ -31,6 +31,7 @@
                     <th>Địa chỉ</th> 
                     <th>Điện thoại</th>
                     <th>Email</th>       
+                    <th>Tác vụ</th>
                   </tr>
                   </thead>
                   <tbody>

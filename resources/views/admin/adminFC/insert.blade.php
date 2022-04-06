@@ -7,20 +7,13 @@
       <div class="container-fluid">
         <div class="row mb-2">
           <div class="col-sm-6">
-            <h1>Quản lý thức ăn</h1>
+            <h1>Quản lý  thể loại thức ăn</h1>
           </div>
       
         </div>
       </div><!-- /.container-fluid -->
     </section>
-<div class="content-wrapper">
-    <!-- Content Header (Page header) -->
-    <section class="content-header">
-      <div class="container-fluid">
-        <div class="row mb-2">
-          <div class="col-sm-6">
-            <h1>Quản lý thể loại thức ăn</h1>
-          </div>
+
         <section class="content">
               <div class="container-fluid">
                 <div class="row">
@@ -30,13 +23,14 @@
                           <h3 class="card-title">Thêm thực phẩm</h3>     
                       </div>
                       <!-- /.card-header -->
-                          <form method="post" action="">
+                          <form method="post" action="foodcategory"> 
+                          <input type="hidden" name="_token" value="{{ csrf_token() }}" />
                               <div class="card-body">
                                 <div class="form-group">
-                                  <label for="Tên loại">Tên loại thức ăn</label>
-                                  <input type="text" name="tên loại"  class="form-control"  placeholder="gõ tên thức ăn">
+                                  <label for="">Tên loại thức ăn</label>
+                                  <input type="name" class="form-control" name="name" placeholder="gõ tên thức ăn">
                                 </div>
-                                
+                                       
                               <div class="card-footer">
                                 <button type="submit" class="btn btn-primary">Thêm</button>
                               </div>

@@ -127,12 +127,11 @@
     </aside>
     <!-- /.control-sidebar -->
     @yield('content')
-    <!-- Main Footer -->
+    <!-- Main Footer -->   
   </div>
 
   <!-- ./wrapper -->
 
-  @yield('content')
   <!-- Control Sidebar -->
   <aside class="control-sidebar control-sidebar-dark">
     <!-- Control sidebar content goes here -->
@@ -167,19 +166,7 @@
   <!-- AdminLTE for demo purposes -->
   <script src="{{asset('js/adminjs/demo.js')}}"></script>
   <!-- Page specific script -->
-  <script>
-    $(function() {
-      $('data').DataTable({
-        "paging": true,
-        "lengthChange": false,
-        "searching": false,
-        "ordering": true,
-        "info": true,
-        "autoWidth": false,
-        "responsive": true,
-      });
-    });
-  </script>
+
 </body>
 
 </html>

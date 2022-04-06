@@ -26,7 +26,8 @@
                   <thead>
                   <tr>
                     <th>ID</th>
-                    <th>Tên loại món ăn</th>         
+                    <th>Tên loại món ăn</th>  
+                    <th>Tác vụ</th>       
                   </tr>
                   </thead>
                   <tbody>
@@ -56,4 +57,6 @@
       </div>
       <!-- /.container-fluid -->
     </section>
-  @endsection
+ 
+</div>
+@endsection
