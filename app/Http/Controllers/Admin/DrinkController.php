@@ -29,7 +29,7 @@ class DrinkController extends Controller
      */
     public function create()
     {
-        
+        return view('/admin/drink_create');
     }
 
     /**
@@ -40,7 +40,16 @@ class DrinkController extends Controller
      */
     public function store(Request $request)
     {
-        
+        $drinks = new drink;
+        $food->FoodName = $request->FoodName; 
+        $food->FoodPrice = $request->FoodPrice;
+        $food->FoodCategoryCode = $request->FoodCategoryCode;
+        $food->Status = $request->Status;
+        $food->FoodCoverPhoto = $request->FoodCoverPhoto;
+
+        $food->save();
+        return redirect()->action('Admin\DrinkController@create');
+
     }
 
 
