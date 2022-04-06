@@ -21,7 +21,7 @@ class FoodController extends Controller
         $fcs = DB::table('food_categories')->select('*')->get();
 
         $pageName = 'Danh sách món ăn';
-        return view('admin/adminFood/index', compact('foods','fcs'))->withFoods('$foods');
+        return view('admin/adminFood/index', compact('foods','fcs'));
     }
 
     /**
@@ -31,7 +31,7 @@ class FoodController extends Controller
      */
     public function create()
     {
-        return view('/admin/food_create');
+        // return view('/admin/');
     }
 
     /**
@@ -62,9 +62,7 @@ class FoodController extends Controller
      */
     public function edit($FoodCode)
     {
-        $food = Food::findOrFail($FoodCode);
-        $pageName = 'Food - Update';
-        return view('/admin/food_updateFood', compact('food', 'pageName'));
+        
     }
 
     /**
@@ -76,14 +74,7 @@ class FoodController extends Controller
      */
     public function update(Request $request, $FoodCode)
     {
-        $food = new food;
-        $food->FoodName = $request->FoodName; 
-        $food->FoodPrice = $request->FoodPrice;
-        $food->FoodCategoryCode = $request->FoodCategoryCode;
-        $food->Status = $request->Status;
-        $food->FoodCoverPhoto = $request->FoodCoverPhoto;
-        $food->save();
-        return redirect()->action('Admin\FoodController@index');
+        
     }
 
     /**
@@ -94,10 +85,6 @@ class FoodController extends Controller
      */
     public function destroy($FoodCode)
     {
-        $food = Food::find($FoodCode);
-
-        $food->delete();
-        return redirect()->action('Admin\FoodController@index')->with('success','Dữ liệu xóa thành công.');
-   
+       
     }
 }
