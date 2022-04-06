@@ -35,8 +35,7 @@
                   </tr>
                 </thead>
                 <tbody>
-                  @if (isset($food) && $food->count() > 0)
-                  @foreach($food as $row)
+                  @foreach($foods as $row)
                   <tr>
                     <td>{{$row->FoodCode_PK}}</td>
                     <td>{{$row->FoodName}}</td>
@@ -56,7 +55,6 @@
                     </td>
                   </tr>
                   @endforeach
-                  @endif
                 </tbody>
               </table>
             </div>
