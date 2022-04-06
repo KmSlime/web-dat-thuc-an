@@ -7,5 +7,6 @@ use Illuminate\Database\Eloquent\Model;
 
 class orderbill extends Model
 {
+    protected $table='orderbill';
     use HasFactory;
 }
