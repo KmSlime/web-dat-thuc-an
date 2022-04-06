@@ -26,16 +26,16 @@
     </p>
 
     <div class="form-group">
-        <label class="control-label col-md-2" for="FoodCoverPhoto">Ảnh </label>
-        <input type="file" name="image" class="form-control" value="{{ $food->FoodCoverPhoto }}">
-    </div>
-    <div class="form-group">
-        <label class="control-label col-md-2"></label>
-        <div class="col-md-10 p-2">
-            <img id="Picture" width="200" height="200" />
+            <label class="control-label col-md-2" for="FoodCoverPhoto">Ảnh </label>
+            <input type ="file" name="image" class="form-control" value="{{ $food->FoodCoverPhoto }}">
         </div>
-    </div>
-
+        <div class="form-group">
+            <label class="control-label col-md-2"></label>
+            <div class="col-md-10 p-2">
+                <img id="Picture" width="200" height="200" />
+            </div>
+        </div>
+        
 
     <p>
         <button type="submit">Submit</button>
