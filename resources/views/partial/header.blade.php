@@ -9,6 +9,7 @@
    {
        foreach ($loginuser as $key){
             $_SESSION['Username'] =$key->Username;
+
         }
    }
    
@@ -27,8 +28,8 @@
                     <span class="icon-bar bar2"></span>
                     <span class="icon-bar bar3"></span>
                 </button>
-                <a href="#" class="navbar-brand icon">
-                    FOOD HOUSE
+                <a href="/home" class="navbar-brand icon">
+                     FOODHOUSE
                 </a>
 
             </div>
@@ -52,7 +53,7 @@
                     <li>
                         <?php
                          if (isset($_SESSION['Username'])) {
-                            echo "<a id="."modal_trigger"." href="."#modal".">".$_SESSION['Username']."</a>";
+                            echo "<a id="."modal_trigger"." href="."/user/".$_SESSION['Username'].">".$_SESSION['Username']."</a>";
                             echo "<li><a id="."modal_trigger"." href="."/logout".">Đăng xuất</a></li>";
                         } else {
                             echo "<a id="."modal_trigger"." href="."#modal".">Đăng nhập</a>";

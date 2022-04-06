@@ -9,6 +9,7 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Http\Response;
 use Illuminate\Support\Facades\DB;
 use App\Models\food;
+use App\Models\customer;
 
 class HomeController extends Controller
 {
@@ -45,7 +46,15 @@ class HomeController extends Controller
         // $des = html_entity_decode($news->description);
         return view('pages.catergory', compact('catergory', 'food'));
     }
-
+    public function getUser($getUser) {
+        $userSelect = DB::table('users')->select('*');
+        $userSelect = User::where('Username','=',$getUser)->select('*');
+        $userSelect = $userSelect ->first();
+        $customer = DB::table('customer')->select('*');
+        $customer = customer::where('CustomerID_PK','=',$userSelect->CustomerID_FK)->select('*');
+        $customer = $customer ->first();
+        return view('pages.user', compact('userSelect', 'customer'));
+        }
     public function postLogin(Request $request)
     {
         $listFood = DB::table('food')->select('*');
@@ -60,7 +69,8 @@ class HomeController extends Controller
         if (($loginuser->count()) > 0) {
             foreach ($loginuser as $key) {
                 if (($key->PermissionID_PFK) == 1) {
-                    return view('pages.admin', compact('listFood', 'loginuser'));
+                    $staffs = DB::table('staff')->select('*')->get();
+                    return view('admin/adminStaff/index', compact('staffs'));
                 } else {
                     return view('pages.index', compact('listFood', 'loginuser'));
                 }

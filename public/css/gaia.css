@@ -384,10 +384,12 @@ body > .navbar-collapse a {
   overflow: hidden;
   max-width: 100%;
   margin: 0 auto;
+  height: 300px;
 }
 .avatar img {
   width: 100%;
   height: auto;
+  object-fit: cover;
 }
 
 .avatar-danger {
@@ -3811,7 +3813,7 @@ body {
 .nav-sidebar { 
   width: 100%;
   padding: 8px 0; 
-  border-right: 1px solid #ddd;
+ 
 
 }
 .section-item .nav >li{
@@ -4275,7 +4277,11 @@ a.btn_red  {
 @media (min-width: 1000px)
 {
   .card{
-    height: 500px;
+    height: 400px;
+  }
+
+  .main-content .avatar{
+    height:300px;
   }
   .card .title{
 
@@ -4285,7 +4291,7 @@ a.btn_red  {
 @media (max-width: 900px)
 {
   .card{
-    height: 300px;
+    height: 200px;
   }
   .card .title{
 

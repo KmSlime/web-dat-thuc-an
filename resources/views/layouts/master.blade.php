@@ -22,12 +22,12 @@
 </body>
 <script src="{{ asset('js\jquery.min.js') }}" type="text/javascript"></script>
 <script src="{{ asset('js\jquery.leanModal.min.js') }}"></script>
-<script src="{{ asset('js\boostrap.js') }}" type="text/javascript"></script>
+<script src="{{ asset('js\bootstrap.js') }}" type="text/javascript"></script>
 <!--  js library for devices recognition -->
 <script type="text/javascript" src="{{ asset('js\modernizr.js') }}"></script>
 
 <!--   file where we handle all the script from the Gaia - Bootstrap Template   -->
-<script type="text/javascript" src="{{ asset('js\app.js') }}"></script>
+<script type="text/javascript" src="{{ asset('js\my.js') }}"></script>
 <script type="text/javascript">
     // Plugin options and our code
     $("#modal_trigger").leanModal({

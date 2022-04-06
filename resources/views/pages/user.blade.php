@@ -1,5 +1,5 @@
 @extends('layouts.master-2')
-
+@section('content')
 <!-- section list -->
 <div class="section section-item ">
     <div class="container">
@@ -24,27 +24,33 @@
                 <div class="user-content">
                     <form action="" class="form-horizontal">
                         <div class="form-group">
-                            <label for="first_name" class="col-xs-3 control-label">Họ tên</label>
+                            <label for="first_name" class="col-xs-3 control-label">Họ</label>
                             <div class="col-xs-9">
-                                <input type="text" class="form-control" id="first_name" name="first_name">
+                                <input type="text" class="form-control" id="first_name" name="first_name" value="{{$customer->CustomerLastName}}">
                             </div>
                         </div>
                         <div class="form-group">
-                            <label for="last_name" class="col-xs-3 control-label">Gmail</label>
+                            <label for="first_name" class="col-xs-3 control-label">Tên</label>
                             <div class="col-xs-9">
-                                <input type="text" class="form-control" id="last_name" name="last_name">
+                                <input type="text" class="form-control" id="first_name" name="first_name" value="{{$customer->CustomerFirstName}}">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="last_name" class="col-xs-3 control-label">UserName</label>
+                            <div class="col-xs-9">
+                                <input type="text" class="form-control" id="last_name" name="last_name" value="{{$userSelect->Username}}">
                             </div>
                         </div>
                         <div class="form-group">
                             <label for="last_name" class="col-xs-3 control-label">Password</label>
                             <div class="col-xs-9">
-                                <input type="text" class="form-control" id="last_name" name="last_name">
+                                <input type="text" class="form-control" id="last_name" name="last_name" value="{{$userSelect->Password}}">
                             </div>
                         </div>
                         <div class="form-group">
                             <label for="last_name" class="col-xs-3 control-label">Số điện thoại</label>
                             <div class="col-xs-9">
-                                <input type="text" class="form-control" id="last_name" name="last_name">
+                                <input type="text" class="form-control" id="last_name" name="last_name"value="{{$customer->CustomerPhoneContact}}">
                             </div>
                         </div>
                         <div class="form-group">
@@ -59,3 +65,4 @@
         </div>
     </div>
 </div>
+@endsection

@@ -28,7 +28,7 @@ class FCController extends Controller
      */
     public function create()
     {
-        
+        return view('admin/adminFC/insert');
     }
 
     /**
@@ -39,7 +39,12 @@ class FCController extends Controller
      */
     public function store(Request $request)
     {
-        
+        $storeData = $request->validate([
+            'name' => 'required|max:255'
+        ]);
+
+        $fcs = food_categories::create($storeData);
+        return redirect('/admin/foodcatergories')->
     }
 
 

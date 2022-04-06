@@ -1,4 +1,5 @@
 @extends('layouts.master')
+@section('content')
 <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
     <!-- Indicators -->
     <ol class="carousel-indicators">
@@ -12,7 +13,7 @@
         <div class="item active">
             <div class="section section-small section-get-started">
                 <div class="parallax filter">
-                    <div class="image" style="background-image: url('assets/img/test slide.jpg')">
+                    <div class="image" style="background-image: url('{{asset('img/test slide.jpg')}}')">
                     </div>
                     <div class="container">
                         <div class="title-area">
@@ -31,7 +32,7 @@
         <div class="item">
             <div class="section section-small section-get-started">
                 <div class="parallax filter">
-                    <div class="image" style="background-image: url('assets/img/test slide.jpg')">
+                    <div class="image" style="background-image: url('{{ asset('img/test slide.jpg')}}">
                     </div>
                     <div class="container">
                         <div class="title-area">
@@ -51,14 +52,7 @@
 
 
     <!-- Controls -->
-    <a class="left carousel-control" href="#carousel-example-generic" role="button" data-slide="prev">
-        <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
-        <span class="sr-only">Previous</span>
-    </a>
-    <a class="right carousel-control" href="#carousel-example-generic" role="button" data-slide="next">
-        <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
-        <span class="sr-only">Next</span>
-    </a>
+ 
 </div>
 
 
@@ -98,4 +92,4 @@
         </div>
     </div>
 </div>
-
+@endsection

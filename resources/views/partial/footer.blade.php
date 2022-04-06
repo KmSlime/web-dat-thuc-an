@@ -21,44 +21,36 @@
             </div>
             <div class="col-md-3 col-md-offset-1 col-sm-3">
                 <div class="info">
-                    <h5 class="title"> Help and Support</h5>
+                    <h5 class="title"> Hỗ trợ </h5>
                     <nav>
                         <ul>
                             <li>
-                                <a href="#">Contact Us</a>
+                                <a href="#">Liên hệ</a>
                             </li>
                             <li>
-                                <a href="#">How it works</a>
+                                <a href="#">Thanh toán</a>
                             </li>
-                            <li>
-                                <a href="#">Terms &amp; Conditions</a>
-                            </li>
-                            <li>
-                                <a href="#">Company Policy</a>
-                            </li>
-                            <li>
-                                <a href="#">Money Back</a>
-                            </li>
+                           
                         </ul>
                     </nav>
                 </div>
             </div>
             <div class="col-md-3 col-sm-3">
                 <div class="info">
-                    <h5 class="title">Latest News</h5>
+                    <h5 class="title">Tin mới</h5>
                     <nav>
                         <ul>
                             <li>
                                 <a href="#">
-                                    <i class="fa fa-twitter"></i> <b>Get Shit Done</b> The best kit in the market is
-                                    here, just give it a try and let us...
+                                    <i class="fa fa-twitter"></i>
+                                    Chúng tôi phục vụ
                                     <hr class="hr-small">
                                 </a>
                             </li>
                             <li>
                                 <a href="#">
-                                    <i class="fa fa-twitter"></i> We've just been featured on <b> Awwwards
-                                        Website</b>! Thank you everybody for...
+                                    <i class="fa fa-twitter"></i> 
+                                    Cảm ơn đã sử dụng
                                 </a>
                             </li>
                         </ul>
@@ -67,7 +59,7 @@
             </div>
             <div class="col-md-2 col-md-offset-1 col-sm-3">
                 <div class="info">
-                    <h5 class="title">Follow us on</h5>
+                    <h5 class="title">Theo dõi</h5>
                     <nav>
                         <ul>
                             <li>

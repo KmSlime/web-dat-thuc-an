@@ -65,7 +65,7 @@
             <!-- Add icons to the links using the .nav-icon class
                with font-awesome or any other icon font library -->
             <li class="nav-item">
-              <a href="#" class="nav-link">
+              <a href="/admin/staff" class="nav-link">
                 <i class="nav-icon fas fa-th"></i>
                 <p>
                   Quản lý thành viên
@@ -73,23 +73,32 @@
               </a>
             </li>
             <li class="nav-item">
-              <a href="#" class="nav-link">
+              <a href="/admin/user" class="nav-link">
                 <i class="nav-icon fas fa-copy"></i>
                 <p>
-                  Quản lý khách hàng
+                  Quản lý  tài khoản
                 </p>
-              </a>
+              </a>  
             </li>
             <li class="nav-item">
-              <a href="#" class="nav-link">
+              <a href="/admin/foodcatergory" class="nav-link">
                 <i class="nav-icon fas fa-chart-pie"></i>
                 <p>
-                  Quản lý thức ăn
+                  Quản lý  loại thức ăn
                 </p>
               </a>
             </li>
             <li class="nav-item">
-              <a href="#" class="nav-link">
+              <a href="/admin/drinkcatergory" class="nav-link">
+                <i class="nav-icon fas fa-chart-pie"></i>
+                <p>
+                  Quản lý  loại thức uống
+                </p>
+              </a>
+            </li>
+        
+            <li class="nav-item">
+              <a href="/admin/drink" class="nav-link">
                 <i class="nav-icon fas fa-tree"></i>
                 <p>
                   Quản lý thức uống
@@ -97,12 +106,13 @@
               </a>
             </li>
             <li class="nav-item">
-              <a href="#" class="nav-link">
+              <a href="/admin/food" class="nav-link">
                 <i class="nav-icon fas fa-edit"></i>
                 <p>
-                  Quản lý đơn hàng
+                  Quản lý thức ăn
                 </p>
               </a>
+             </li>
           </ul>
         </nav>
         <!-- /.sidebar-menu -->

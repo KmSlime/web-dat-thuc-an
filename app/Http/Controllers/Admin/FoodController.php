@@ -29,7 +29,7 @@ class FoodController extends Controller
      */
     public function create()
     {
-        
+       
     }
 
     /**
@@ -40,7 +40,7 @@ class FoodController extends Controller
      */
     public function store(Request $request)
     {
-        
+       
     }
 
 

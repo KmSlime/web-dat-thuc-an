@@ -1,9 +1,10 @@
 @extends('layouts.master-2')
+@section('content')
 <?php $imgtest = '<?php echo asset(' . 'img/test.jpg' . ')?>'; ?>
 <div class="section section-item ">
     <div class="container">
         <div class="row">
-            <div class="col-md-4 col-xs-4">
+            <div class="col-md-2 col-xs-2">
                 <nav class="nav-sidebar">
                     <ul class="nav">
                         <li class ="active">
@@ -17,7 +18,7 @@
                     </ul>
                 </nav>
             </div>
-            <div class="col-md-6 col-xs-6">
+            <div class="col-md-10 col-xs-6">
                 <div class="main-content">
                     <div class="row">
                         @foreach($food as $row)
@@ -43,3 +44,4 @@
         </div>
     </div>
 </div>
+@endsection

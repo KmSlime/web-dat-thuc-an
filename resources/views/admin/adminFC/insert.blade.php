@@ -30,32 +30,13 @@
                           <h3 class="card-title">Thêm thực phẩm</h3>     
                       </div>
                       <!-- /.card-header -->
-                          <form>
+                          <form method="post" action="">
                               <div class="card-body">
                                 <div class="form-group">
-                                  <label for="">Tên thức ăn</label>
-                                  <input type="name" class="form-control" id="exampleInputEmail1" placeholder="gõ tên thức ăn">
+                                  <label for="Tên loại">Tên loại thức ăn</label>
+                                  <input type="text" name="tên loại"  class="form-control"  placeholder="gõ tên thức ăn">
                                 </div>
-                                <div class="form-group">
-                                  <label for="">Ảnh thức ăn</label>
-                                  <input type="name" class="form-control" id="exampleInputPassword1" placeholder="link ảnh">
-                                </div>
-                            
-                                <div class="form-group">
-                                  <label for="">Thể loại</label>
-                                  <select class="custom-select form-control-border" >
-                                      <option>món ngon</option>
-                                      <option>gà</option>
-                                      <option>thịt</option>
-                                    </select>
-                                </div>
-                                <div class="form-group">
-                                  <label for="">Giá tiền</label>
-                                  <input type="number" class="form-control" id="exampleInputPassword1" placeholder="giá tiền">
-                                </div>
-                              </div>
-                              <!-- /.card-body -->
-              
+                                
                               <div class="card-footer">
                                 <button type="submit" class="btn btn-primary">Thêm</button>
                               </div>
