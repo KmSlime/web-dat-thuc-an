@@ -11,7 +11,6 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-
 Route::get('/home','App\Http\Controllers\HomeController@getHome');
 Route::post('/home','App\Http\Controllers\HomeController@postLogin');
 Route::get('/menu','App\Http\Controllers\HomeController@getAll');
@@ -22,18 +21,12 @@ Route::post('login', 'App\Http\Controllers\HomeController@postLogin');
 
 Route::get('/admin', 'App\Http\Controllers\AdminController@index')->name('Admin');
 //thêm - sửa - xoá admin
-//thêm http://localhost:8000/admin/food/create/
-Route::get('/admin/food/create', 'App\Http\Controllers\Admin\AdminFoodsController@create');
-Route::post('/admin/food/store', 'App\Http\Controllers\Admin\AdminFoodsController@store');
-//Index http://localhost:8000/admin/food/
-Route::get('/admin/food', 'App\Http\Controllers\Admin\AdminFoodsController@index');
+Route::get('/admin/foodcatergory','App\Http\Controllers\Admin\FCController@index');
+Route::get('/admin/food','App\Http\Controllers\Admin\FoodController@index');
+Route::get('/admin/drink','App\Http\Controllers\Admin\DrinkController@index');
+Route::get('/admin/drinkcatergory','App\Http\Controllers\Admin\DCController@index');
+Route::get('/admin/staff','App\Http\Controllers\Admin\StaffController@index');
+Route::get('/admin/user','App\Http\Controllers\Admin\UserController@index');
 
-//Edit http://localhost:8000/admin/food/
-Route::get('/admin/news/edit/{FoodCode}', 'App\Http\Controllers\Admin\AdminFoodsController@edit');
-Route::PATCH('/admin/news/edit/{FoodCode}', 'App\Http\Controllers\Admin\AdminFoodsController>@update');
-//Detail
-Route::get('/admin/news/{FoodCode}', 'App\Http\Controllers\Admin\AdminFoodsController@show');
-
-Route::DELETE('/admin/news/delete{FoodCode', 'App\Http\Controllers\Admin\AdminFoodsController@destroy');
 //register
 Route::post('register', 'App\Http\Controllers\HomeController@postRegister');
