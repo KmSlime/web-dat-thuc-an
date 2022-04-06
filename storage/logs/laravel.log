@@ -363,6 +363,7 @@
 #32 K:\\projects\\xampp\\htdocs\\dat-thuc-an\\public\\index.php(55): Illuminate\\Foundation\\Http\\Kernel->handle(Object(Illuminate\\Http\\Request))
 #33 {main}
 "} 
+<<<<<<< HEAD
 [2022-04-05 17:00:45] local.ERROR: syntax error, unexpected token "<<", expecting end of file {"exception":"[object] (ParseError(code: 0): syntax error, unexpected token \"<<\", expecting end of file at K:\\projects\\xampp\\htdocs\\dat-thuc-an\
 outes\\web.php:17)
 [stacktrace]
@@ -4868,3 +4869,5 @@ esources\\views\\partial\\header.blade.php","data":[]},"exception":"[object] (Sp
 #38 {main}
 >>>>>>> parent of a22119d (food show)
 "} 
+=======
+>>>>>>> parent of 844b1d9 (add login, logout)
