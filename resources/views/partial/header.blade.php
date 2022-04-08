@@ -128,7 +128,7 @@
             <div class="user_register">
                 <form action="register" method="post">
                     <input type="hidden" name="_token" value="{{ csrf_token() }}"/>
-                    <label>Email Address</label> <input type="email" name="email"><br>
+                    <label>Email Address</label> <input type="email" name="Username"><br>
                     <label>Password</label> <input type="password" name="password"><br>
 {{-- 
                     <div class="checkbox">

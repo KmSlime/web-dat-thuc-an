@@ -12,7 +12,7 @@ use Illuminate\Support\Facades\Route;
 */
 
 
-Route::get('/home','App\Http\Controllers\HomeController@getHome');
+Route::get('/home','App\Http\Controllers\HomeController@getInsert');
 Route::post('/home','App\Http\Controllers\HomeController@postLogin');
 Route::get('/menu','App\Http\Controllers\HomeController@getAll');
 Route::get('/logout','App\Http\Controllers\HomeController@getLogout');

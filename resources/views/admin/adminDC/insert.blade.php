@@ -30,20 +30,21 @@
                           <h3 class="card-title">Thêm thực phẩm</h3>     
                       </div>
                       <!-- /.card-header -->
-                          <form>
+                      <form action="foodinsert" method="post">
+                         <input type="hidden" name="_token" value="{{ csrf_token() }}"/>
                               <div class="card-body">
                                 <div class="form-group">
                                   <label for="">Tên thức ăn</label>
-                                  <input type="name" class="form-control" id="exampleInputEmail1" placeholder="gõ tên thức ăn">
+                                  <input type="name" name="foodname" class="form-control" id="exampleInputEmail1" placeholder="gõ tên thức ăn">
                                 </div>
                                 <div class="form-group">
                                   <label for="">Ảnh thức ăn</label>
-                                  <input type="name" class="form-control" id="exampleInputPassword1" placeholder="link ảnh">
+                                  <input type="name" name="foodimage" class="form-control" id="exampleInputPassword1" placeholder="link ảnh">
                                 </div>
                             
                                 <div class="form-group">
                                   <label for="">Thể loại</label>
-                                  <select class="custom-select form-control-border" >
+                                  <select class="custom-select form-control-border" name="foodcategory">
                                       <option>món ngon</option>
                                       <option>gà</option>
                                       <option>thịt</option>
@@ -51,7 +52,7 @@
                                 </div>
                                 <div class="form-group">
                                   <label for="">Giá tiền</label>
-                                  <input type="number" class="form-control" id="exampleInputPassword1" placeholder="giá tiền">
+                                  <input type="number" name="foodprice" class="form-control" id="exampleInputPassword1" placeholder="giá tiền">
                                 </div>
                               </div>
                               <!-- /.card-body -->

@@ -8,8 +8,14 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Http\Response;
 use Illuminate\Support\Facades\DB;
 use App\Models\food;
+use App\Models\customer;
+use App\Models\staff;
 class HomeController extends Controller
 {
+    public function getInsert()
+    {
+        return view('admin.adminFood.insert');
+    }
     public function getHome()
     {
         $listFood = DB::table('food')->select('*');
@@ -77,28 +83,28 @@ class HomeController extends Controller
         return view('pages.index');
     }
     public function postRegister(Request $request)
-    {
+    {   
         $this -> validate($request,[
-            'email' => 'required|unique:users,email',
-            'password' => 'required|min:3|max:32'
+            'Username' => 'required|unique:users,Username',
+            //'Password' => 'required|min:3|max:32'
         ],[
-            'emai.required' => 'Bạn chưa nhập username hoặc email',
-            'emai.unique' => 'username hoặc email đã tồn tại',
-            'password.required' => 'Bạn chưa nhập mật khẩu',
-            'password.min' => 'Mật khẩu cần ít nhất 3 ký tự',
-            'password.max' => 'Mật khẩu tối đa 32 ký tự'
+            'Username.required' => 'Bạn chưa nhập Username hoặc email',
+            'Username.unique' => 'Username hoặc email đã tồn tại',
+            'Password.required' => 'Bạn chưa nhập mật khẩu',
+            'Password.min' => 'Mật khẩu cần ít nhất 3 ký tự',
+            'Password.max' => 'Mật khẩu tối đa 32 ký tự'
 
         ]);
         $user = new User;
-        $user ->email = $request ->email;
-        $user ->password = $request ->password;
-        $user ->password = bcrypt($request ->password);
-        $user ->PermissionID=4;
-        $user ->CustomerID=0;
-        $user ->staffID=0;
+        $user ->Username = $request ->Username;
+        $user ->Password = $request ->Password;
+        $user ->Password = bcrypt($request ->Password);
+        $user ->PermissionID_PFK=4;
         $user ->LoyaltyPoint=0;
         $user ->Avatar="NULL";
         $user ->save();
-        return view('pages.index')->with('thongbao','Đăng ký thành công');
+        $listFood = DB::table('food')->select('*');
+        $listFood = $listFood ->get();
+        return view('pages.index',compact('listFood'))->with('thongbao','Đăng ký thành công');
     }
 }
