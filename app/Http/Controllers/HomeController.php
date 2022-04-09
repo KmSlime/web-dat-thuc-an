@@ -10,9 +10,36 @@ use Illuminate\Support\Facades\DB;
 use App\Models\food;
 use App\Models\customer;
 use App\Models\staff;
+use Exception;
+
 class HomeController extends Controller
 {
-    public function getInsert()
+    public function getAdmin()
+    {
+        $listFood = DB::table('food')->select('*');
+        $listFood = $listFood ->get();
+        return view('pages.admin',compact('listFood'));
+    }
+    public function postCreatefood(Request $request)
+    {   try{
+            $createfood = new food;
+            $createfood ->FoodName = $request ->FoodName;
+            $createfood ->FoodPrice = $request ->FoodPrice;
+            $createfood ->FoodCategoryCode_PFK = $request ->FoodCategoryCode_PFK;
+            $createfood ->Status = $request ->Status;
+            $createfood ->FoodCoverPhoto = $request ->FoodCoverPhoto;
+            $createfood ->save();
+            
+            echo '<script language="javascript">alert("Thêm food thành công!");</script>';
+            return view('admin.adminFood.insert');
+        }
+        catch(Exception $ex)
+        {
+            echo '<script language="javascript">alert("Thêm food thất bại, lỗi trong quá trình thêm!");</script>';
+            return view('admin.adminFood.insert');
+        }
+    }
+    public function getCreateFood()
     {
         return view('admin.adminFood.insert');
     }
@@ -65,17 +92,20 @@ class HomeController extends Controller
             {
                 if(($key->PermissionID_PFK)==1)
                 {
+                    echo '<script language="javascript">alert("Đăng nhập thành công quyền quản trị Admin!, chuyển đến trang quản trị dành cho admin.");</script>';
                     return view('pages.index',compact('listFood','loginuser'));
                 }
                 else 
                 {
+                    echo '<script language="javascript">alert("Đăng nhập thành công!");</script>';
                     return view('pages.index',compact('listFood','loginuser'));
                 }
             }
         }
         else 
         {
-            return dd('no');
+            echo '<script language="javascript">alert("Đăng nhập thất bại, vui lòng kiểm tra lại username và password!");</script>';
+            return view('pages.index',compact('listFood'));
         }
     }
     function getRegister()
@@ -105,6 +135,7 @@ class HomeController extends Controller
         $user ->save();
         $listFood = DB::table('food')->select('*');
         $listFood = $listFood ->get();
-        return view('pages.index',compact('listFood'))->with('thongbao','Đăng ký thành công');
+        echo '<script language="javascript">alert("Đăng ký thành công!");</script>';
+        return view('pages.index',compact('listFood'));
     }
 }
