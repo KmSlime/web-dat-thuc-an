@@ -8,5 +8,6 @@ use Illuminate\Database\Eloquent\Model;
 class services extends Model
 {
     protected $table='services';
+    protected $primaryKey = 'ServiceCode_PK';
     use HasFactory;
 }

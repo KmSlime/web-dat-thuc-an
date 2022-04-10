@@ -5,10 +5,10 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
-use App\Models\staff;
+use App\Models\customer;
 
 
-class StaffController extends Controller
+class CusController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -17,8 +17,8 @@ class StaffController extends Controller
      */
     public function index()
     {
-        $staffs = DB::table('staff')->select('*')->paginate(5);
-        return view('admin.adminStaff.index', compact('staffs'));
+        $customers = DB::table('customer')->select('*')->paginate(5);
+        return view('admin.adminCus.index', compact('customers'));
     }
 
     /**
@@ -28,7 +28,7 @@ class StaffController extends Controller
      */
     public function create()
     {
-        return view('admin.adminStaff.insert');
+        return view('admin.adminCus.insert');
     }
 
     /**
@@ -48,18 +48,18 @@ class StaffController extends Controller
             'email' => 'required',
     ]);
 
-        $staff = new staff();
-        $staff->StaffFirstName = $request->first;
-        $staff->StaffLastName = $request->last;
-        $staff->StaffAddress = $request->address;
-        $staff->StaffPhoneContact = $request->phone;
-        $staff->StaffGender= $request->gender;
-        $staff->StaffDateOfBirth= $request->birth;
-        $staff->StaffEmail= $request->email;
-        $staff->timestamps = false;
-        $staff->save();
-        return redirect()->route('staff.index')
-        ->with('success','Thêm thành công nhân viên');
+        $customer = new customer();
+        $customer->CustomerFirstName = $request->first;
+        $customer->CustomerLastName = $request->last;
+        $customer->CustomerAddress = $request->address;
+        $customer->CustomerPhoneContact = $request->phone;
+        $customer->CustomerGender= $request->gender;
+        $customer->CustomerDateOfBirth= $request->birth;
+        $customer->CustomerEmail= $request->email;
+        $customer->timestamps = false;
+        $customer->save();
+        return redirect()->route('customer.index')
+        ->with('success','Thêm thành công khách hàng');
 }
     
 
@@ -71,8 +71,8 @@ class StaffController extends Controller
      */
     public function edit($id)
     {
-        $staff = staff::where('StaffID_PK','=',$id)->first();
-        return view('admin.adminStaff.edit',compact('staff'));
+        $customer = customer::where('CustomerID_PK','=',$id)->first();
+        return view('admin.adminCus.edit',compact('customer'));
     }
 
     /**
@@ -92,18 +92,18 @@ class StaffController extends Controller
             'gender' => 'required|max:255',
             'email' => 'required',
     ]);
-        $staff = staff::where('StaffID_PK','=',$id)->first();
-        $staff->StaffFirstName = $request->first;
-        $staff->StaffLastName = $request->last;
-        $staff->StaffAddress = $request->address;
-        $staff->StaffPhoneContact = $request->phone;
-        $staff->StaffGender= $request->gender;
-        $staff->StaffDateOfBirth= $request->birth;
-        $staff->StaffEmail= $request->email;
-        $staff->timestamps = false;
-        $staff->save();
-        return redirect()->route('staff.index')
-        ->with('success','update thành công nhân viên');
+        $customer = customer::where('CustomerID_PK','=',$id)->first();
+        $customer->CustomerFirstName = $request->first;
+        $customer->CustomerLastName = $request->last;
+        $customer->CustomerAddress = $request->address;
+        $customer->CustomerPhoneContact = $request->phone;
+        $customer->CustomerGender= $request->gender;
+        $customer->CustomerDateOfBirth= $request->birth;
+        $customer->CustomerEmail= $request->email;
+        $customer->timestamps = false;
+        $customer->save();
+        return redirect()->route('customer.index')
+        ->with('success','update thành công khách hàng');
         
     }
 
@@ -115,8 +115,8 @@ class StaffController extends Controller
      */
     public function destroy($id)
     {
-        $staff = staff::where('StaffID_PK','=',$id)->delete();
-        return redirect()->route('staff.index')->with('success', ' nhân viên đã bị xoá');
+        $customer = customer::where('CustomerID_PK','=',$id)->delete();
+        return redirect()->route('customer.index')->with('success', ' khách hàng đã bị xoá');
 
     }
 }

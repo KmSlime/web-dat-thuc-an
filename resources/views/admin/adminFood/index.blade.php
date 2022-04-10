@@ -7,7 +7,7 @@
     <div class="container-fluid">
       <div class="row mb-2">
         <div class="col-sm-6">
-          <h1>Quản lý thực phẩm</h1>
+          <h1>Quản lý thức ăn</h1>
         </div>
       </div>
     </div><!-- /.container-fluid -->
@@ -20,8 +20,15 @@
             <div class="card-header">
             </div>
             <!-- /.card-header -->
+            <!-- có làm bảng khác nhớ copy khúc này-->
             <div class="card-body">
-              <a class=" btn btn-primary" href="{{ route('admin.adminFC.insert') }}" style="float:right; margin-right: 10px; width: 100px;">thêm</a>
+            @if($message = Session::get('success'))
+              <div class="alert alert-success">
+                <p>{{$message}}</p>
+              </div>
+              @endif
+              <a class=" btn btn-primary" href="{{ route('food.create') }}" style="float:right; margin-right: 10px; width: 100px;">thêm</a>
+            <!-- rồi sửa lại -->
               <table id="data" class="table table-bordered table-hover">
                 <thead>
                   <tr>
@@ -58,14 +65,20 @@
                       {{$row->FoodPrice}}
                     </td>
                     <td>
-                      <a href="#"><i class="fas fa-wrench"></i></a>
-
-                      <a href="#"><i class="fas fa-times"></i></a>
-                    </td>
+                       <!-- có làm bảng khác nhớ copy khúc này-->
+                    <form action="{{ route('food.destroy',$row->FoodCode_PK) }}" method="Post">
+                      <a href="{{ route('food.edit',$row->FoodCode_PK) }}" class="fas fa-wrench"></a>
+                      @csrf
+                      @method('DELETE')
+                      <button type="submit" class=" btn btn-primary">xoá</button>
+                    </form>  
+                      <!-- rồi sửa lại -->    
                   </tr>
                   @endforeach
                 </tbody>
+           
               </table>
+              {!!$foods->links()!!}
             </div>
             <!-- /.card-body -->
           </div>

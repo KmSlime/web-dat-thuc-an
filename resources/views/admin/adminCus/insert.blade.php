@@ -7,7 +7,7 @@
       <div class="container-fluid">
         <div class="row mb-2">
           <div class="col-sm-6">
-            <h1>Quản lý nhân viên</h1>
+            <h1>Quản lý khách hàng</h1>
           </div>
       
         </div>
@@ -19,35 +19,28 @@
                   <div class="col-md-6">
                     <div class="card card-primary">
                       <div class="card-header">     
-                          <h3 class="card-title">Thêm nhân viên</h3>     
+                          <h3 class="card-title">Thêm khách hàng</h3>     
                       </div>
                       <!-- /.card-header -->
-                          <form method="post" action="{{ route('staff.store') }}"> 
+                          <form method="post" action="{{ route('customer.store') }}"> 
                           @csrf       
                               <div class="card-body">
                                 <div class="form-group">
                                   <label for="">Họ</label>
-                                  <input type="name" class="form-control" name="first" placeholder="họ">
-                                  @error('first')
+                                  <input type="name" class="form-control" name="username" placeholder="họ">
+                                  @error('username')
                                   <div class="alert alert-danger mt-1 mb-1">{{ $message }}</div>
                                   @enderror
                                 </div>
                                 <div class="form-group">
                                   <label for="">Tên</label>
-                                  <input type="name" class="form-control" name="last" placeholder="tên">
-                                  @error('last')
+                                  <input type="name" class="form-control" name="password" placeholder="tên">
+                                  @error('password')
                                   <div class="alert alert-danger mt-1 mb-1">{{ $message }}</div>
                                   @enderror
-                                </div>
+                                </div>                             
                                 <div class="form-group">
-                                  <label for="">Địa chỉ</label>
-                                  <input type="name" class="form-control" name="address" placeholder="địa chỉ">
-                                  @error('address')
-                                  <div class="alert alert-danger mt-1 mb-1">{{ $message }}</div>
-                                  @enderror
-                                </div>
-                                <div class="form-group">
-                                  <label for="">Giới tính</label>
+                                  <label for="">Quyền</label>
                                   <select class="custom-select form-control-border"  name="gender" >                                
                                         <option value="Nam">Nam</option>
                                         <option value="Nữ">Nữ</option>
@@ -82,7 +75,7 @@
                               <!-- /.card-body -->
               
                               <div class="card-footer">
-                                <a href="{{ route('staff.index') }}"class="btn btn-primary">trở về </a>
+                                <a href="{{ route('customer.index') }}"class="btn btn-primary">trở về </a>
                                 <button type="submit" class="btn btn-primary">Thêm</button>
                               </div>
                             </form>

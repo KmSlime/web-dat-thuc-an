@@ -7,7 +7,7 @@
       <div class="container-fluid">
         <div class="row mb-2">
           <div class="col-sm-6">
-            <h1>Quản lý  người dùng/h1>
+            <h1>Quản lý khách hàng</h1>
           </div>    
         </div>
       </div><!-- /.container-fluid -->
@@ -26,47 +26,58 @@
                 <p>{{$message}}</p>
               </div>
               @endif
-                 <a class=" btn btn-primary" href="{{ route('user.create')}}" style="float:right; margin-right: 10px; width: 100px;">thêm</a>
+                 <a class=" btn btn-primary" href="{{ route('customer.create')}}" style="float:right; margin-right: 10px; width: 100px;">thêm</a>
                 <table id="data" class="table table-bordered table-hover">
                   <thead>
                   <tr>
                     <th>ID</th>
-                    <th>Tài khoản</th>     
-                    <th>Mật khảu</th> 
-                    <th>Quyền</th>   
-                    <th>Tác vụ</th>     
+                    <th>Họ khách hàng</th>     
+                    <th>Tên khách hàng</th> 
+                    <th>Giới tính</th> 
+                    <th>Địa chỉ</th> 
+                    <th>Điện thoại</th>
+                    <th>Email</th>       
+                    <th>Tác vụ</th>
                   </tr>
                   </thead>
                   <tbody>
-                  @foreach($users as $row)
+                  @foreach($customers as $row)
                   <tr>                 
-                    <td>{{$row->UserID_PK }}</td>
+                    <td>{{$row->CustomerID_PK }}</td>
                     <td>
-                        {{$row->Username}}
-                    </td> 
-                    <td>
-                        {{$row->Password}}
+                        {{$row->CustomerFirstName}}
                     </td>
                     <td>
-                        @foreach($pss as $value)
-                          @if($value->PermissionID_PK  == $row->PermissionID_PFK )
-                            {{$value->PermissionDescription}}
-                         @endif
-                       @endforeach
-                    </td>             
+                        {{$row->CustomerLastName}}
+                    </td>
                     <td>
-                    <form action="{{ route('user.destroy',$row->UserID_PK) }}" method="Post">
-                        <a href="{{ route('user.edit',$row->UserID_PK) }}" class="fas fa-wrench"></a>
+                        {{$row->CustomerAddress}}
+                    </td>  
+                    <td>
+                        {{$row->CustomerPhoneContact}}
+                    </td>   
+                    <td>
+                        {{$row->CustomerGender}}
+                    </td>                   
+                    <td>
+                      {{$row->CustomerPhoneContact}}
+                    </td>
+                    <td>
+                      {{$row->CustomerEmail}}
+                    </td>
+                    <td>
+                      <form action="{{ route('customer.destroy',$row->CustomerID_PK) }}" method="Post">
+                        <a href="{{ route('customer.edit',$row->CustomerID_PK) }}" class="fas fa-wrench"></a>
                         @csrf
                         @method('DELETE')
                         <button type="submit" class=" btn btn-primary">xoá</button>
-                      </form>                            
+                      </form>                    
                     </td>
                   </tr>
                   @endforeach
                   </tbody>           
                 </table>
-                {!!$users->links()!!}
+                {!!$customers->links()!!}
               </div>
               <!-- /.card-body -->
             </div>

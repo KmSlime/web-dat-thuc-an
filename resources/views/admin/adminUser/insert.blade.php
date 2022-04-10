@@ -7,56 +7,54 @@
       <div class="container-fluid">
         <div class="row mb-2">
           <div class="col-sm-6">
-            <h1>Quản lý thức ăn</h1>
+            <h1>Quản lý tài khoản</h1>
           </div>
       
         </div>
       </div><!-- /.container-fluid -->
     </section>
-<div class="content-wrapper">
-    <!-- Content Header (Page header) -->
-    <section class="content-header">
-      <div class="container-fluid">
-        <div class="row mb-2">
-          <div class="col-sm-6">
-            <h1>Quản lý thể loại thức ăn</h1>
-          </div>
         <section class="content">
               <div class="container-fluid">
                 <div class="row">
                   <div class="col-md-6">
                     <div class="card card-primary">
                       <div class="card-header">     
-                          <h3 class="card-title">Thêm thực phẩm</h3>     
+                          <h3 class="card-title">Thêm tài khoản</h3>     
                       </div>
                       <!-- /.card-header -->
-                          <form>
+                          <form method="post" action="{{ route('user.store') }}"> 
+                          @csrf       
                               <div class="card-body">
                                 <div class="form-group">
-                                  <label for="">Tên thức ăn</label>
-                                  <input type="name" class="form-control" id="exampleInputEmail1" placeholder="gõ tên thức ăn">
+                                  <label for="">Tài khoản</label>
+                                  <input type="name" class="form-control" name="username" placeholder="tài khoản">
+                                  @error('username')
+                                  <div class="alert alert-danger mt-1 mb-1">{{ $message }}</div>
+                                  @enderror
                                 </div>
                                 <div class="form-group">
-                                  <label for="">Ảnh thức ăn</label>
-                                  <input type="name" class="form-control" id="exampleInputPassword1" placeholder="link ảnh">
+                                  <label for="">Mật khẩu</label>
+                                  <input type="name" class="form-control" name="password" placeholder="mật khẩu">
+                                  @error('pass')
+                                  <div class="alert alert-danger mt-1 mb-1">{{ $message }}</div>
+                                  @enderror
                                 </div>
-                            
                                 <div class="form-group">
-                                  <label for="">Thể loại</label>
-                                  <select class="custom-select form-control-border" >
-                                      <option>món ngon</option>
-                                      <option>gà</option>
-                                      <option>thịt</option>
+                                  <label for="">Quyền</label>
+                                  <select class="custom-select form-control-border"  name="permission" >
+                                      @foreach($pss as $row)
+                                        <option value="{{$row->PermissionID_PK}}">{{$row->PermissionDescription}}</option>
+                                      @endforeach    
                                     </select>
-                                </div>
-                                <div class="form-group">
-                                  <label for="">Giá tiền</label>
-                                  <input type="number" class="form-control" id="exampleInputPassword1" placeholder="giá tiền">
-                                </div>
+                                    @error('category')
+                                    <div class="alert alert-danger mt-1 mb-1">{{ $message }}</div>
+                                  @enderror
+                                </div>                          
                               </div>
                               <!-- /.card-body -->
               
                               <div class="card-footer">
+                                <a href="{{ route('user.index') }}"class="btn btn-primary">trở về </a>
                                 <button type="submit" class="btn btn-primary">Thêm</button>
                               </div>
                             </form>

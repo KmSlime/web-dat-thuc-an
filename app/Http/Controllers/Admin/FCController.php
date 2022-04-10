@@ -80,7 +80,7 @@ class FCController extends Controller
         $fc->FoodCategoryName = $request->name;
         $fc->timestamps = false;
         $fc->save();
-        return redirect()->route('foodcatergory.index')
+        return redirect()->route('foodcategory.index')
         ->with('success','update thành công thể loại thức ăn');
         
     }
@@ -94,7 +94,7 @@ class FCController extends Controller
     public function destroy($id)
     {
         $fc = food_categories::where('FoodCategoryCode_PK','=',$id)->delete();
-        return redirect()->route('foodcatergory.index')->with('completed', ' Thể loại thức ăn đã bị xoá');
+        return redirect()->route('foodcatergory.index')->with('success', ' Thể loại thức ăn đã bị xoá');
 
     }
 }

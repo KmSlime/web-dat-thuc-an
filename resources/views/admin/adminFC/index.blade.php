@@ -7,7 +7,7 @@
       <div class="container-fluid">
         <div class="row mb-2">
           <div class="col-sm-6">
-            <h1>Quản lý  loại thực phẩm</h1>
+            <h1>Quản lý loại thức ăn</h1>
           </div>    
         </div>
       </div><!-- /.container-fluid -->
@@ -21,7 +21,12 @@
               </div>
               <!-- /.card-header -->
               <div class="card-body">
-              <a class=" btn btn-primary" href="{{ route('foodcatergory.create') }}" style="float:right; margin-right: 10px; width: 100px;">thêm</a>
+              @if($message = Session::get('success'))
+              <div class="alert alert-success">
+                <p>{{$message}}</p>
+              </div>
+              @endif
+              <a class=" btn btn-primary" href="{{ route('foodcategory.create') }}" style="float:right; margin-right: 10px; width: 100px;">thêm</a>
                 <table id="data" class="table table-bordered table-hover">
                   <thead>
                   <tr>
@@ -38,17 +43,18 @@
                         {{$row->FoodCategoryName}}
                     </td>
                     <td>  
-                    <form action="{{ route('foodcatergory.destroy',$row->FoodCategoryCode_PK) }}" method="Post">
-                      <a href="{{ route('foodcatergory.edit',$row->FoodCategoryCode_PK) }}" class="fas fa-wrench"></a>
+                    <form action="{{ route('foodcategory.destroy',$row->FoodCategoryCode_PK) }}" method="Post">
+                      <a href="{{ route('foodcategory.edit',$row->FoodCategoryCode_PK) }}" class="fas fa-wrench"></a>                   
                       @csrf
                       @method('DELETE')
-                      <button type="submit" class="fas fa-times"></button>
+                      <button type="submit" class=" btn btn-primary">xoá</button>
                     </form>                 
                     </td>
                   </tr>
                   @endforeach
                   </tbody>           
                 </table>
+                {!!$fcs->links()!!}
               </div>
               <!-- /.card-body -->
             </div>

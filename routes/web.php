@@ -1,6 +1,13 @@
 <?php
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Admin\FCController;
+use App\Http\Controllers\Admin\DCController;
+use App\Http\Controllers\Admin\DrinkController;
+use App\Http\Controllers\Admin\FoodController;
+use App\Http\Controllers\Admin\StaffController;
+use App\Http\Controllers\Admin\CusController;
+use App\Http\Controllers\Admin\UserController;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -25,14 +32,14 @@ Route::get('/user/{getUser}','App\Http\Controllers\HomeController@getUser');
 //login
 Route::post('login', 'App\Http\Controllers\HomeController@postLogin');
 //them sua xoa
-Route::resource('admin/foodcatergory', FCController::class);
+Route::resource('admin/foodcategory', FCController::class);
+Route::resource('admin/food', FoodController::class);
+Route::resource('admin/drinkcategory', DCController::class);
+Route::resource('admin/drink', DrinkController::class);
+Route::resource('admin/staff', StaffController::class);
+Route::resource('admin/customer', CusController::class);
+Route::resource('admin/user', UserController::class);
 
-Route::get('/admin/staff', 'App\Http\Controllers\AdminController@index')->name('Admin');
-Route::get('/admin/food','App\Http\Controllers\Admin\FoodController@index');
-Route::get('/admin/drink','App\Http\Controllers\Admin\DrinkController@index');
-Route::get('/admin/drinkcatergory','App\Http\Controllers\Admin\DCController@index');
-Route::get('/admin/staff','App\Http\Controllers\Admin\StaffController@index');
-Route::get('/admin/user','App\Http\Controllers\Admin\UserController@index');
 
 //register
 Route::post('register', 'App\Http\Controllers\HomeController@postRegister');

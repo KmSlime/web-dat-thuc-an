@@ -7,7 +7,7 @@
       <div class="container-fluid">
         <div class="row mb-2">
           <div class="col-sm-6">
-            <h1>Quản lý  thể loại thức ăn</h1>
+            <h1>Quản lý loại thức ăn</h1>
           </div>
       
         </div>
@@ -20,12 +20,12 @@
                   <div class="col-md-6">
                     <div class="card card-primary">
                       <div class="card-header">     
-                          <h3 class="card-title">Thêm thực phẩm</h3>     
+                          <h3 class="card-title">Sửa loại thức ăn</h3>     
                       </div>
                       <!-- /.card-header -->
-                          <form method="post" action="{{ route('foodcatergory.update',  $fc->FoodCategoryCode_PK) }} ">                   
+                          <form method="post" action="{{ route('foodcategory.update',  $fc->FoodCategoryCode_PK) }} ">                   
                            @csrf           
-                           @method('PATCH')
+                           @method('PUT')
                               <div class="card-body">
                                 <div class="form-group">
                                   <label for=""></label>
@@ -36,7 +36,8 @@
                                 </div>
                                        
                               <div class="card-footer">
-                                <button type="submit" class="btn btn-primary">Thêm</button>
+                              <a href="{{ route('foodcategory.index') }}"class="btn btn-primary">trở về </a>
+                                <button type="submit" class="btn btn-primary">Sửa</button>
                               </div>
                           </form>
                       <!-- /.card-body -->

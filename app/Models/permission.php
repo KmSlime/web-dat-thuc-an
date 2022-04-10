@@ -8,5 +8,6 @@ use Illuminate\Database\Eloquent\Model;
 class permission extends Model
 {
     protected $table='permission';
+    protected $primaryKey = 'PermissionID_PK';
     use HasFactory;
 }
