@@ -23,18 +23,21 @@
                           <h3 class="card-title">Thêm thực phẩm</h3>     
                       </div>
                       <!-- /.card-header -->
-                          <form method="post" action="foodcategory"> 
-                          <input type="hidden" name="_token" value="{{ csrf_token() }}" />
+                          <form method="post" action="{{ route('foodcatergory.update') }}"> 
+                          @csrf                 
                               <div class="card-body">
                                 <div class="form-group">
                                   <label for="">Tên loại thức ăn</label>
                                   <input type="name" class="form-control" name="name" placeholder="gõ tên thức ăn">
+                                  @error('name')
+                                  <div class="alert alert-danger mt-1 mb-1">{{ $message }}</div>
+                                  @enderror
                                 </div>
                                        
                               <div class="card-footer">
                                 <button type="submit" class="btn btn-primary">Thêm</button>
                               </div>
-                            </form>
+                          </form>
                       <!-- /.card-body -->
                     </div>
                     <!-- /.card -->   

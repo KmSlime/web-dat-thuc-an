@@ -21,7 +21,7 @@
               </div>
               <!-- /.card-header -->
               <div class="card-body">
-                 <button class=" btn btn-primary" style="float:right; margin-right: 10px; width: 100px;">thêm</button>
+              <a class=" btn btn-primary" href="{{ route('foodcatergory.create') }}" style="float:right; margin-right: 10px; width: 100px;">thêm</a>
                 <table id="data" class="table table-bordered table-hover">
                   <thead>
                   <tr>
@@ -37,10 +37,13 @@
                     <td>
                         {{$row->FoodCategoryName}}
                     </td>
-                    <td>
-                       <a href="#"><i class="fas fa-wrench"></i></a>
-
-                        <a href="#"><i class="fas fa-times"></i></a>                    
+                    <td>  
+                    <form action="{{ route('foodcatergory.destroy',$row->FoodCategoryCode_PK) }}" method="Post">
+                      <a href="{{ route('foodcatergory.edit',$row->FoodCategoryCode_PK) }}" class="fas fa-wrench"></a>
+                      @csrf
+                      @method('DELETE')
+                      <button type="submit" class="fas fa-times"></button>
+                    </form>                 
                     </td>
                   </tr>
                   @endforeach

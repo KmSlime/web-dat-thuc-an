@@ -18,7 +18,7 @@ class FCController extends Controller
     {
         $fcs = DB::table('food_categories')->select('*')->paginate(10);
         
-        return view('admin/adminFC/index', compact('fcs'));
+        return view('admin.adminFC.index', compact('fcs'));
     }
 
     /**
@@ -28,7 +28,7 @@ class FCController extends Controller
      */
     public function create()
     {
-        return view('admin/adminFC/insert');
+        return view('admin.adminFC.insert');
     }
 
     /**
@@ -39,14 +39,18 @@ class FCController extends Controller
      */
     public function store(Request $request)
     {
-        return dd('dd');
-        $storeData = $request->validate([
+         $request->validate([
             'name' => 'required|max:255'
         ]);
 
-        $fcs = food_categories::create($storeData);
-        return redirect('/admin/foodcatergory')->with('Complete', 'Create Food Category is success!');
-    }
+        $fc = new food_categories();
+        $fc->FoodCategoryName = $request->name;
+        $fc->timestamps = false;
+        $fc->save();
+        return redirect()->route('foodcatergory.index')
+        ->with('success','Thêm thành công thể loại thức ăn');
+}
+    
 
     /**
      * Show the form for editing the specified resource.
@@ -56,26 +60,28 @@ class FCController extends Controller
      */
     public function edit($id)
     {
-        $fc  = food_categories::findOrFail($id);
-        return view('/admin/adminFC/index', compact('fc'));
-
+        $fc = food_categories::where('FoodCategoryCode_PK','=',$id)->first();
+        return view('admin.adminFC.edit',compact('fc'));
     }
 
     /**
      * Update the specified resource in storage.
-     *
+     *d
      * @param  \Illuminate\Http\Request  $request
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
     public function update(Request $request, $id)
     {
-        $updateData = $request->validate([
-            'name' => 'required|max:255',
-            
+        $request->validate([
+            'name' => 'required|max:255'
         ]);
-        food_categories::whereId($id)->update($updateData);
-        return redirect('/admin/foodcatergory')->with('completed', 'Food Category has been updated');
+        $fc = food_categories::where('FoodCategoryCode_PK','=',$id)->first();
+        $fc->FoodCategoryName = $request->name;
+        $fc->timestamps = false;
+        $fc->save();
+        return redirect()->route('foodcatergory.index')
+        ->with('success','update thành công thể loại thức ăn');
         
     }
 
@@ -87,9 +93,8 @@ class FCController extends Controller
      */
     public function destroy($id)
     {
-        $fc  = food_categories::findOrFail($id);
-        $fc->delete();
-        return redirect('/admin/foodcatergory')->with('completed', ' Food Category has been deleted');
+        $fc = food_categories::where('FoodCategoryCode_PK','=',$id)->delete();
+        return redirect()->route('foodcatergory.index')->with('completed', ' Thể loại thức ăn đã bị xoá');
 
     }
 }

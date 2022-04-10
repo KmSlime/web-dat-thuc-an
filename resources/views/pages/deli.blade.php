@@ -1,4 +1,5 @@
 @extends('layouts.master-2')
+@section('content')
 <!-- section list -->
 <div class="section section-item ">
     <div class="container">
@@ -99,3 +100,4 @@
         </div>
     </div>
 </div>
+@endsection

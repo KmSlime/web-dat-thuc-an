@@ -17,7 +17,7 @@ class DCController extends Controller
      */
     public function index()
     {
-        $dcs = DB::table('drink_categories')->select('*')->get();
+        $dcs = DB::table('drink_categories')->select('*')->paginate(10);
         return view('admin/adminDC/index', compact('dcs'));
     }
 

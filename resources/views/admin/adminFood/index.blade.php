@@ -21,7 +21,7 @@
             </div>
             <!-- /.card-header -->
             <div class="card-body">
-              <button class=" btn btn-primary" style="float:right; margin-right: 10px; width: 100px;">thêm</button>
+              <a class=" btn btn-primary" href="{{ route('admin.adminFC.insert') }}" style="float:right; margin-right: 10px; width: 100px;">thêm</a>
               <table id="data" class="table table-bordered table-hover">
                 <thead>
                   <tr>
