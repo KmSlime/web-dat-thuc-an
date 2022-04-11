@@ -9,7 +9,7 @@
    {
        foreach ($loginuser as $key){
             $_SESSION['Username'] =$key->Username;
-
+            $_SESSION['IDUser'] =$key->UserID_PK;
         }
    }
    

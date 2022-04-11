@@ -5,22 +5,22 @@
             <div class="row">
                 <div class="col-md-6 col-xs-4">
                     <div class="item-preview">
-                        <img alt="..." class="item-image" src="assets\img\test.jpg" />
+                        <img alt="..." class="item-image" src="{{$listFood->FoodCoverPhoto}}" />
                     </div>
                     <div class="item-decription">
-                        <h2>Mô tả</h2>
-                        <p> món này rất ngon</p>
+                        <h2>Thể loại</h2>
+                        <p>{{$category->FoodCategoryName}}</p>
                     </div>
                 </div>
                 <!--user content-->
                 <div class="col-md-6 col-xs-6">
                     <div class="item-detail">
-                        <h3>Cơm sườn</h3>
-                        <form action="" class="form-horizontal">
+                        <h3>{{$listFood->FoodName}}</h3>
+                        <form action="/home/food/cart/{{$listFood->FoodCode_PK}}" class="form-horizontal" method="get">
                             <div class="form-group">
                                 <label for="first_name" class="col-xs-3 control-label">Giá tiền</label>
                                 <div class="col-xs-9">
-                                    <p>12.000đ</p>
+                                    <p>{{$listFood->FoodPrice}}</p>
                                 </div>
                             </div>
                             <div class="form-group">
@@ -29,12 +29,13 @@
                                         <input type="number" name="" class="form-control input-number" value="1">
                                     </div>
                                 </div>
-                            </div>          
                             <div class="form-group">
                                 <div class="col-xs-offset-3 col-xs-9">
-                                    <button type="" class="btn btn-default">thêm vào giỏ hàng</button>
-                                </div>
+                                        <button type="submit" class="btn btn-default">thêm vào giỏ hàng</button>
+                                    </div>
                             </div>
+                        </div>          
+                           
                         </form>
                     </div>
                 </div>

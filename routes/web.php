@@ -1,12 +1,13 @@
 <?php
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\Admin\FCController;
-use App\Http\Controllers\Admin\DCController;
-use App\Http\Controllers\Admin\DrinkController;
-use App\Http\Controllers\Admin\FoodController;
-use App\Http\Controllers\Admin\StaffController;
-use App\Http\Controllers\Admin\CusController;
-use App\Http\Controllers\Admin\UserController;
+use Admin\FCController;
+use Admin\DCController;
+use Admin\DrinkController;
+use Admin\FoodController;
+use Admin\StaffController;
+use Admin\CusController;
+use Admin\UserController;
+
 
 
 /*
@@ -22,15 +23,19 @@ use App\Http\Controllers\Admin\UserController;
 
 
 // insret catergory
-Route::post('foodcategory', 'App\Http\Controllers\Admin\FCController@store');
-Route::get('/home','App\Http\Controllers\HomeController@getHome');
-Route::post('/home','App\Http\Controllers\HomeController@postLogin');
-Route::get('/menu','App\Http\Controllers\HomeController@getAll');
-Route::get('/logout','App\Http\Controllers\HomeController@getLogout');
-Route::get('/menu/{idcatergory}','App\Http\Controllers\HomeController@getMenu');
-Route::get('/user/{getUser}','App\Http\Controllers\HomeController@getUser');
+Route::get('/home','HomeController@getHome');
+Route::post('/home','HomeController@postLogin');
+Route::get('/menu','HomeController@getAll');
+Route::get('/logout','HomeController@getLogout');
+Route::get('/menu/{idcatergory}','HomeController@getMenu');
+Route::get('/user/{getUser}','HomeController@getUser');
 //login
-Route::post('login', 'App\Http\Controllers\HomeController@postLogin');
+Route::post('login', 'HomeController@postLogin');
+//chi tiet san pham
+Route::get('/home/food','Food\FoodDetailController@getFood');
+Route::get('/home/food/{ID_Food}','Food\FoodDetailController@getFoodID');
+//them vao gio hang
+Route::get('/home/food/cart/{ID_Food}','Food\CartFoodController@CartFood');
 //them sua xoa
 Route::resource('admin/foodcategory', FCController::class);
 Route::resource('admin/food', FoodController::class);
@@ -42,5 +47,5 @@ Route::resource('admin/user', UserController::class);
 
 
 //register
-Route::post('register', 'App\Http\Controllers\HomeController@postRegister');
+Route::post('register', 'HomeController@postRegister');
 ?>

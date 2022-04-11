@@ -55,57 +55,67 @@ class HomeController extends Controller
         $customer = $customer ->first();
         return view('pages.user', compact('userSelect', 'customer'));
         }
-    public function postLogin(Request $request)
-    {
-        $listFood = DB::table('food')->select('*');
-        $listFood = $listFood->get();
-        $arr = [
-            'email' => $request->email,
-            'password' => $request->password,
-        ];
-        $loginuser = DB::table('users')->select('*');
-        $loginuser = User::where('Username', '=', $arr['email'])->where('Password', '=', $arr['password'])->select('*');
-        $loginuser = $loginuser->get();
-        if (($loginuser->count()) > 0) {
-            foreach ($loginuser as $key) {
-                if (($key->PermissionID_PFK) == 1) {
-                    $staffs = DB::table('staff')->select('*')->get();
-                    return view('admin/adminStaff/index', compact('staffs'));
-                } else {
-                    return view('pages.index', compact('listFood', 'loginuser'));
+        public function postLogin(Request $request)
+        {   
+            $listFood = DB::table('food')->select('*');
+            $listFood = $listFood ->get();
+            $arr = [
+                'email' => $request->email,
+                'password' => $request->password,
+            ];
+            $loginuser = DB::table('users')->select('*');
+            $loginuser = User::where('Username','=',$arr['email'])->where('Password','=',$arr['password'])->select('*');
+            $loginuser = $loginuser->get();
+            if(($loginuser->count())>0)
+            {
+                foreach($loginuser as $key)
+                {
+                    if(($key->PermissionID_PFK)==1)
+                    {
+                        echo '<script language="javascript">alert("Đăng nhập thành công quyền quản trị Admin!, chuyển đến trang quản trị dành cho admin.");</script>';
+                        return view('pages.index',compact('listFood','loginuser'));
+                    }
+                    else 
+                    {
+                        echo '<script language="javascript">alert("Đăng nhập thành công!");</script>';
+                        return view('pages.index',compact('listFood','loginuser'));
+                    }
                 }
             }
-        } else {
-            return dd('no');
+            else 
+            {
+                echo '<script language="javascript">alert("Đăng nhập thất bại, vui lòng kiểm tra lại username và password!");</script>';
+                return view('pages.index',compact('listFood'));
+            }
         }
-    }
     function getRegister()
     {
         return view('pages.index');
     }
     public function postRegister(Request $request)
-    {
-        $this->validate($request, [
-            'email' => 'required|unique:users,email',
-            'password' => 'required|min:3|max:32'
-        ], [
-            'emai.required' => 'Bạn chưa nhập username hoặc email',
-            'emai.unique' => 'username hoặc email đã tồn tại',
-            'password.required' => 'Bạn chưa nhập mật khẩu',
-            'password.min' => 'Mật khẩu cần ít nhất 3 ký tự',
-            'password.max' => 'Mật khẩu tối đa 32 ký tự'
+    {   
+        $this -> validate($request,[
+            'Username' => 'required|unique:users,Username',
+            //'Password' => 'required|min:3|max:32'
+        ],[
+            'Username.required' => 'B?n chua nh?p Username ho?c email',
+            'Username.unique' => 'Username ho?c email dã t?n t?i',
+            'Password.required' => 'B?n chua nh?p m?t kh?u',
+            'Password.min' => 'M?t kh?u c?n ít nh?t 3 ký t?',
+            'Password.max' => 'M?t kh?u t?i da 32 ký t?'
 
         ]);
         $user = new User;
-        $user->email = $request->email;
-        $user->password = $request->password;
-        $user->password = bcrypt($request->password);
-        $user->PermissionID = 4;
-        $user->CustomerID = 0;
-        $user->staffID = 0;
-        $user->LoyaltyPoint = 0;
-        $user->Avatar = "NULL";
-        $user->save();
-        return view('pages.index')->with('thongbao', 'Đăng ký thành công');
+        $user ->Username = $request ->Username;
+        $user ->Password = $request ->Password;
+        $user ->Password = bcrypt($request ->Password);
+        $user ->PermissionID_PFK=4;
+        $user ->LoyaltyPoint=0;
+        $user ->Avatar="NULL";
+        $user ->save();
+        $listFood = DB::table('food')->select('*');
+        $listFood = $listFood ->get();
+        echo '<script language="javascript">alert("Ðăng ký thành công!");</script>';
+        return view('pages.index',compact('listFood'));
     }
 }
