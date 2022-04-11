@@ -45,7 +45,7 @@ CREATE TABLE `customers` (
 --
 
 INSERT INTO `customers` (`CustomerID`, `CustomerFirstName`, `CustomerLastName`, `CustomerAddress`, `CustomerPhoneContact`, `CustomerGender`, `CustomerDateOfBirth`, `CustomerEmail`, `created_at`, `updated_at`) VALUES
-(1, 'Hồng Liêm', 'Nguyễn', '123 ABC, Quận Gò Vấp, Tp HCM', '0792777911', 'Nam', '0000-00-00', 'guenvesley@gmail.com', NULL, NULL),
+(1, 'Hồng Liêm', 'Nguyễn', '123 ABC, Quận Gò Vấp, Tp HCM', '0792777911', 'Nam', '1999-08-11', 'guenvesley@gmail.com', NULL, NULL),
 (2, 'Tấn Thành', 'Trương', '456 DVB, Quận Gò Vấp, Tp HCM', '0852477277', 'Nam', '0000-00-00', 'tanthanh28082000@gmail.com', NULL, NULL),
 (3, 'Hoàng Vũ', 'Nguyễn', '123 ABC, Quận Thủ Đức, Tp HCM', '0903992107', 'Nam', '0000-00-00', 'gauvu107@gmail.com', NULL, NULL),
 (4, 'Vĩ Hải', 'Trần', '124 ABC, Quận Thủ Đức, Tp HCM', '0903068723', 'Nam', '0000-00-00', 'vihai147896345@gmail.com', NULL, NULL),
