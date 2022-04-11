@@ -7,6 +7,7 @@ use Admin\FoodController;
 use Admin\StaffController;
 use Admin\CusController;
 use Admin\UserController;
+use Admin\ServicesController;
 
 
 
@@ -21,8 +22,7 @@ use Admin\UserController;
 |
 */
 
-
-// insret catergory
+// insert catergory
 Route::get('/home','HomeController@getHome');
 Route::post('/home','HomeController@postLogin');
 Route::get('/menu','HomeController@getAll');
@@ -37,6 +37,8 @@ Route::get('/home/food/{ID_Food}','Food\FoodDetailController@getFoodID');
 //them vao gio hang
 Route::get('/home/food/cart/{ID_Food}','Food\CartFoodController@CartFood');
 //them sua xoa
+
+//resources
 Route::resource('admin/foodcategory', FCController::class);
 Route::resource('admin/food', FoodController::class);
 Route::resource('admin/drinkcategory', DCController::class);
@@ -44,8 +46,12 @@ Route::resource('admin/drink', DrinkController::class);
 Route::resource('admin/staff', StaffController::class);
 Route::resource('admin/customer', CusController::class);
 Route::resource('admin/user', UserController::class);
+Route::resource('admin/services', ServicesController::class);
+
 
 
 //register
 Route::post('register', 'HomeController@postRegister');
+
+//services
 ?>

@@ -13,7 +13,7 @@
         <div class="item active">
             <div class="section section-small section-get-started">
                 <div class="parallax filter">
-                    <div class="image" style="background-image: url('{{asset('img/test slide.jpg')}}')">
+                    <div class="image" style="">
                     </div>
                     <div class="container">
                         <div class="title-area">
@@ -32,7 +32,7 @@
         <div class="item">
             <div class="section section-small section-get-started">
                 <div class="parallax filter">
-                    <div class="image" style="background-image: url('{{ asset('img/test slide.jpg')}}">
+                    <div class="image" style="">
                     </div>
                     <div class="container">
                         <div class="title-area">
@@ -52,7 +52,7 @@
 
 
     <!-- Controls -->
- 
+
 </div>
 
 
@@ -69,21 +69,26 @@
                     <div class="row">
                         @foreach($listFood as $row)
                         <tr>
-                        
+
                             <div class="col-md-3 col-xs-3">
                                 <div class="card card-member">
                                     <div class="content">
                                         <div class="avatar avatar-danger">
                                             <td><a href="/home/food/{{$row->FoodCode_PK}}">
-                                                <img alt="" class="" src="{{$row->FoodCoverPhoto}}"/>
-                                            </a></td>
+                                                    <img alt="" class="" src="{{$row->FoodCoverPhoto}}" />
+                                                </a></td>
                                         </div>
                                         <div class="description">
-                                            <td><h3 class="title">
-                                            <a href="/home/food/{{$row->FoodCode_PK}}">{{$row->FoodName}}</a></h3></td>
+                                            <td>
+                                                <h3 class="title">
+                                                    <a href="/home/food/{{$row->FoodCode_PK}}">{{$row->FoodName}}</a>
+                                                </h3>
+                                            </td>
                                         </div>
                                         <div class="description">
-                                            <td><h3 class="title">{{$row->FoodPrice}} VNĐ</h3></td>
+                                            <td>
+                                                <h3 class="title">{{$row->FoodPrice}} VNĐ</h3>
+                                            </td>
                                         </div>
                                     </div>
                                 </div>

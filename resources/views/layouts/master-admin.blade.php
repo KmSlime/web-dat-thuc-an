@@ -121,6 +121,34 @@
                 </p>
               </a>
              </li>
+
+             <li class="nav-item">
+              <a href="{{ route('services.index') }}" class="nav-link">
+                <i class="nav-icon fas fa-hamburger"></i>
+                <p>
+                  Quản lý dịch vụ
+                </p>
+              </a>
+             </li>
+
+             <li class="nav-item">
+              <a href="#" class="nav-link">
+                <i class="nav-icon fas fa-hamburger"></i>
+                <p>
+                  Quản lý hóa đơn
+                </p>
+              </a>
+             </li>
+
+             <li class="nav-item">
+              <a href="#" class="nav-link">
+                <i class="nav-icon fas fa-hamburger"></i>
+                <p>
+                  Thống kê
+                </p>
+              </a>
+             </li>
+
           </ul>
         </nav>
         <!-- /.sidebar-menu -->
