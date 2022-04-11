@@ -5,8 +5,8 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
-use App\Models\food;
-use App\Models\food_categories;
+use App\Models\users;
+
 
 class UserController extends Controller
 {
@@ -17,9 +17,10 @@ class UserController extends Controller
      */
     public function index()
     {
-        $users = DB::table('users')->select('*')->get();
+        /** tài khoản khách hàng */
+        $users = DB::table('users')->select('*')->orderBy('PermissionID_PFK')->paginate(5);
         $pss = DB::table('permission')->select('*')->get();
-        return view('admin/adminUser/index', compact('users','pss'));
+        return view('admin.adminUser.index', compact('users','pss'));
     }
 
     /**
@@ -29,7 +30,8 @@ class UserController extends Controller
      */
     public function create()
     {
-        
+        $pss = DB::table('permission')->select('*')->get();
+        return view('admin.adminUser.insert', compact('pss'));
     }
 
     /**
@@ -40,8 +42,22 @@ class UserController extends Controller
      */
     public function store(Request $request)
     {
-        
-    }
+        $request->validate([
+            'username' => 'required|max:255',
+            'password' => 'required|max:255',
+            'permission' => 'required',        
+    ]);
+
+        $user = new users();
+        $user->Username = $request->username;
+        $user->Password = $request->password;
+        $user->PermissionID_PFK = $request->permission;
+        $user->timestamps = false;
+        $user->save();
+        return redirect()->route('user.index')
+        ->with('success','Thêm thành công tài khoản');
+}
+    
 
 
     /**
@@ -50,9 +66,12 @@ class UserController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($FoodCode)
+    public function edit($id)
     {
-        
+        $user = users::where('UserID_PK','=',$id)->first();      
+        $pss = DB::table('permission')->where('PermissionID_PK','<>',$user->PermissionID_PFK)->select('*')->get();
+        $ps = DB::table('permission')->where('PermissionID_PK','=',$user->PermissionID_PFK)->select('*')->first();
+        return view('admin.adminUser.edit',compact('user','ps','pss'));
     }
 
     /**
@@ -62,9 +81,21 @@ class UserController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $FoodCode)
+    public function update(Request $request, $id)
     {
-        
+        $request->validate([
+            'username' => 'required|max:255',
+            'password' => 'required|max:255',
+            'permission' => 'required',          
+    ]);
+        $user = users::where('UserID_PK','=',$id)->first();
+        $user->Username = $request->username;
+        $user->Password = $request->password;
+        $user->PermissionID_PFK = $request->permission;
+        $user->timestamps = false;
+        $user->save();
+        return redirect()->route('user.index')
+        ->with('success','update thành công tài khoản');
     }
 
     /**
@@ -73,8 +104,9 @@ class UserController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($FoodCode)
+    public function destroy($id)
     {
-       
+        $user = users::where('UserID_PK','=',$id)->delete();
+        return redirect()->route('user.index')->with('success', 'tài khoản đã bị xoá');
     }
 }

@@ -7,7 +7,7 @@
       <div class="container-fluid">
         <div class="row mb-2">
           <div class="col-sm-6">
-            <h1>Quản lý  loại thức uống</h1>
+            <h1>Quản lý loại thức uống</h1>
           </div>    
         </div>
       </div><!-- /.container-fluid -->
@@ -21,13 +21,18 @@
               </div>
               <!-- /.card-header -->
               <div class="card-body">
-                 <button class=" btn btn-primary" style="float:right; margin-right: 10px; width: 100px;">thêm</button>
+              @if($message = Session::get('success'))
+              <div class="alert alert-success">
+                <p>{{$message}}</p>
+              </div>
+              @endif
+              <a class=" btn btn-primary" href="{{ route('drinkcategory.create') }}" style="float:right; margin-right: 10px; width: 100px;">thêm</a>
                 <table id="data" class="table table-bordered table-hover">
                   <thead>
                   <tr>
                     <th>ID</th>
-                    <th>Tên loại uống</th>       
-                    <th>Tác vụ</th>  
+                    <th>Tên loại thức uống</th>  
+                    <th>Tác vụ</th>       
                   </tr>
                   </thead>
                   <tbody>
@@ -37,15 +42,19 @@
                     <td>
                         {{$row->DrinkCategoryName}}
                     </td>
-                    <td>
-                       <a href="#"><i class="fas fa-wrench"></i></a>
-
-                        <a href="#"><i class="fas fa-times"></i></a>                    
+                    <td>  
+                    <form action="{{ route('drinkcategory.destroy',$row->DrinkCategoryCode_PK) }}" method="Post">
+                      <a href="{{ route('drinkcategory.edit',$row->DrinkCategoryCode_PK) }}" class="fas fa-wrench"></a>                   
+                      @csrf
+                      @method('DELETE')
+                      <button type="submit" class=" btn btn-primary">xoá</button>
+                    </form>                 
                     </td>
                   </tr>
                   @endforeach
                   </tbody>           
                 </table>
+                {!!$dcs->links()!!}
               </div>
               <!-- /.card-body -->
             </div>
@@ -57,4 +66,6 @@
       </div>
       <!-- /.container-fluid -->
     </section>
-  @endsection
+ 
+</div>
+@endsection

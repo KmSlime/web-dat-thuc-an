@@ -1,6 +1,14 @@
 <?php
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\Admin\FCController;
+use Admin\FCController;
+use Admin\DCController;
+use Admin\DrinkController;
+use Admin\FoodController;
+use Admin\StaffController;
+use Admin\CusController;
+use Admin\UserController;
+
+
 
 /*
 |--------------------------------------------------------------------------
@@ -13,33 +21,31 @@ use App\Http\Controllers\Admin\FCController;
 |
 */
 
-Route::resource('admin/foodcatergory', FCController::class);
+
 // insret catergory
-Route::post('foodcategory', 'App\Http\Controllers\Admin\FCController@store');
-Route::get('/home','App\Http\Controllers\HomeController@getHome');
-Route::post('/home','App\Http\Controllers\HomeController@postLogin');
-Route::get('/menu','App\Http\Controllers\HomeController@getAll');
-Route::get('/logout','App\Http\Controllers\HomeController@getLogout');
-Route::get('/menu/{idcatergory}','App\Http\Controllers\HomeController@getMenu');
-Route::get('/user/{getUser}','App\Http\Controllers\HomeController@getUser');
+Route::get('/home','HomeController@getHome');
+Route::post('/home','HomeController@postLogin');
+Route::get('/menu','HomeController@getAll');
+Route::get('/logout','HomeController@getLogout');
+Route::get('/menu/{idcatergory}','HomeController@getMenu');
+Route::get('/user/{getUser}','HomeController@getUser');
 //login
-Route::post('login', 'App\Http\Controllers\HomeController@postLogin');
+Route::post('login', 'HomeController@postLogin');
+//chi tiet san pham
+Route::get('/home/food','Food\FoodDetailController@getFood');
+Route::get('/home/food/{ID_Food}','Food\FoodDetailController@getFoodID');
+//them vao gio hang
+Route::get('/home/food/cart/{ID_Food}','Food\CartFoodController@CartFood');
+//them sua xoa
+Route::resource('admin/foodcategory', FCController::class);
+Route::resource('admin/food', FoodController::class);
+Route::resource('admin/drinkcategory', DCController::class);
+Route::resource('admin/drink', DrinkController::class);
+Route::resource('admin/staff', StaffController::class);
+Route::resource('admin/customer', CusController::class);
+Route::resource('admin/user', UserController::class);
 
-Route::get('/admin/staff', 'App\Http\Controllers\AdminController@index')->name('Admin');
-//thêm - sửa - xoá admin
-// Route::get('/admin/foodcatergory','App\Http\Controllers\Admin\FCController@index');
-// Route::post('/admin/foodcatergory/create','App\Http\Controllers\Admin\FCController@store');
-// Route::get('/admin/foodcatergory/create','App\Http\Controllers\Admin\FCController@create');
-// Route::post('/admin/foodcatergory/{id}/update','App\Http\Controllers\Admin\FCController@update');
-// Route::get('/admin/foodcatergory/{id}/edit','App\Http\Controllers\Admin\FCController@edit');
-// Route::post('/admin/foodcatergory/{id}/delete','App\Http\Controllers\Admin\FCController@destroy');
 
-
-Route::get('/admin/food','App\Http\Controllers\Admin\FoodController@index');
-Route::get('/admin/drink','App\Http\Controllers\Admin\DrinkController@index');
-Route::get('/admin/drinkcatergory','App\Http\Controllers\Admin\DCController@index');
-Route::get('/admin/staff','App\Http\Controllers\Admin\StaffController@index');
-Route::get('/admin/user','App\Http\Controllers\Admin\UserController@index');
 //register
-Route::post('register', 'App\Http\Controllers\HomeController@postRegister');
+Route::post('register', 'HomeController@postRegister');
 ?>

@@ -56,45 +56,64 @@
           <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
             <!-- Add icons to the links using the .nav-icon class
                with font-awesome or any other icon font library -->
+             <li class="nav-item">
+              <a href="{{ route('customer.index') }}" class="nav-link">
+                <i class="nav-icon fas fa-users"></i>
+                <p>
+                  Quản lý khách hàng
+                </p>
+              </a>
+            </li>
+               
             <li class="nav-item">
-              <a href="#" class="nav-link">
-                <i class="nav-icon fas fa-th"></i>
+              <a href="{{ route('staff.index') }}" class="nav-link">
+                <i class="nav-icon fas fa-users"></i>
                 <p>
                   Quản lý thành viên
                 </p>
               </a>
             </li>
             <li class="nav-item">
-              <a href="#" class="nav-link">
-                <i class="nav-icon fas fa-copy"></i>
+              <a href="{{ route('user.index') }}" class="nav-link">
+                <i class="nav-icon fas fa-user"></i>
                 <p>
-                  Quản lý khách hàng
+                  Quản lý tài khoản
+                </p>
+              </a>  
+            </li>
+         
+            <li class="nav-item">
+              <a href="{{ route('drinkcategory.index') }}" class="nav-link">
+                <i class="nav-icon fas fa-object-group"></i>
+                <p>
+                  Quản lý  loại thức uống
                 </p>
               </a>
-            </li>
+            </li>       
             <li class="nav-item">
-              <a href="#" class="nav-link">
-                <i class="nav-icon fas fa-chart-pie"></i>
-                <p>
-                  Quản lý thức ăn
-                </p>
-              </a>
-            </li>
-            <li class="nav-item">
-              <a href="#" class="nav-link">
-                <i class="nav-icon fas fa-tree"></i>
+              <a href="{{ route('drink.index') }}" class="nav-link">
+                <i class="nav-icon fas fa-glass-martini-alt"></i>
                 <p>
                   Quản lý thức uống
                 </p>
               </a>
             </li>
             <li class="nav-item">
-              <a href="#" class="nav-link">
-                <i class="nav-icon fas fa-edit"></i>
+              <a href="{{ route('foodcategory.index') }}" class="nav-link">
+                <i class="nav-icon fas fa-object-group"></i>
                 <p>
-                  Quản lý đơn hàng
+                  Quản lý  loại thức ăn
                 </p>
               </a>
+            </li>
+            <li class="nav-item">
+              <a href="{{ route('food.index') }}" class="nav-link">
+                <i class="nav-icon fas fa-hamburger"></i>
+                <p>
+                  Quản lý thức ăn
+                </p>
+              </a>
+             </li>
           </ul>
         </nav>
         <!-- /.sidebar-menu -->
@@ -122,8 +141,6 @@
   <script src="{{asset('js/adminjs/bootstrap.bundle.min.js')}}"></script>
   <!-- AdminLTE -->
   <script src="{{asset('js/adminjs/adminlte.js')}}"></script>
-  <!-- AdminLTE for demo purposes -->
-  <script src="{{asset('js/adminjs/demo.js')}}"></script>
 </body>
 
 </html>

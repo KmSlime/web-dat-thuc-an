@@ -7,7 +7,7 @@
       <div class="container-fluid">
         <div class="row mb-2">
           <div class="col-sm-6">
-            <h1>Quản lý  loại thực phẩm</h1>
+            <h1>Quản lý loại thức ăn</h1>
           </div>    
         </div>
       </div><!-- /.container-fluid -->
@@ -21,7 +21,12 @@
               </div>
               <!-- /.card-header -->
               <div class="card-body">
-                 <button class=" btn btn-primary" style="float:right; margin-right: 10px; width: 100px;">thêm</button>
+              @if($message = Session::get('success'))
+              <div class="alert alert-success">
+                <p>{{$message}}</p>
+              </div>
+              @endif
+              <a class=" btn btn-primary" href="{{ route('foodcategory.create') }}" style="float:right; margin-right: 10px; width: 100px;">thêm</a>
                 <table id="data" class="table table-bordered table-hover">
                   <thead>
                   <tr>
@@ -37,15 +42,19 @@
                     <td>
                         {{$row->FoodCategoryName}}
                     </td>
-                    <td>
-                       <a href="#"><i class="fas fa-wrench"></i></a>
-
-                        <a href="#"><i class="fas fa-times"></i></a>                    
+                    <td>  
+                    <form action="{{ route('foodcategory.destroy',$row->FoodCategoryCode_PK) }}" method="Post">
+                      <a href="{{ route('foodcategory.edit',$row->FoodCategoryCode_PK) }}" class="fas fa-wrench"></a>                   
+                      @csrf
+                      @method('DELETE')
+                      <button type="submit" class=" btn btn-primary">xoá</button>
+                    </form>                 
                     </td>
                   </tr>
                   @endforeach
                   </tbody>           
                 </table>
+                {!!$fcs->links()!!}
               </div>
               <!-- /.card-body -->
             </div>

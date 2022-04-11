@@ -1,6 +1,5 @@
 @extends('layouts.master-2')
 @section('content')
-<?php $imgtest = '<?php echo asset(' . 'img/test.jpg' . ')?>'; ?>
 <div class="section section-item ">
     <div class="container">
         <div class="row">

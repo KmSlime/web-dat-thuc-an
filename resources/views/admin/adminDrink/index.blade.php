@@ -7,7 +7,7 @@
       <div class="container-fluid">
         <div class="row mb-2">
           <div class="col-sm-6">
-            <h1>Quản lý nước</h1>
+            <h1>Quản lý thức uống</h1>
           </div>    
         </div>
       </div><!-- /.container-fluid -->
@@ -19,9 +19,13 @@
             <div class="card">
               <div class="card-header">          
               </div>
-              <!-- /.card-header -->
               <div class="card-body">
-                 <button class=" btn btn-primary" style="float:right; margin-right: 10px; width: 100px;">thêm</button>
+              @if($message = Session::get('success'))
+              <div class="alert alert-success">
+                <p>{{$message}}</p>
+              </div>
+              @endif
+              <a class=" btn btn-primary" href="{{ route('drink.create') }}" style="float:right; margin-right: 10px; width: 100px;">thêm</a>
                 <table id="data" class="table table-bordered table-hover">
                   <thead>
                   <tr>
@@ -58,14 +62,18 @@
                       {{$row->DrinkPrice}}
                     </td>
                     <td>
-                       <a href="#"><i class="fas fa-wrench"></i></a>
-
-                        <a href="#"><i class="fas fa-times"></i></a>                    
+                    <form action="{{ route('drink.destroy',$row->DrinkCode_PK) }}" method="Post">
+                      <a href="{{ route('drink.edit',$row->DrinkCode_PK) }}" class="fas fa-wrench"></a>
+                      @csrf
+                      @method('DELETE')
+                      <button type="submit" class=" btn btn-primary">xoá</button>
+                    </form>              
                     </td>
                   </tr>
                   @endforeach
                   </tbody>           
                 </table>
+                {!!$drinks->links()!!}
               </div>
               <!-- /.card-body -->
             </div>

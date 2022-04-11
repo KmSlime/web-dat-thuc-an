@@ -21,7 +21,12 @@
               </div>
               <!-- /.card-header -->
               <div class="card-body">
-                 <button class=" btn btn-primary" style="float:right; margin-right: 10px; width: 100px;">thêm</button>
+              @if($message = Session::get('success'))
+              <div class="alert alert-success">
+                <p>{{$message}}</p>
+              </div>
+              @endif
+                 <a class=" btn btn-primary" href="{{ route('user.create')}}" style="float:right; margin-right: 10px; width: 100px;">thêm</a>
                 <table id="data" class="table table-bordered table-hover">
                   <thead>
                   <tr>
@@ -50,14 +55,18 @@
                        @endforeach
                     </td>             
                     <td>
-                       <a href="#"><i class="fas fa-wrench"></i></a>
-
-                        <a href="#"><i class="fas fa-times"></i></a>                    
+                    <form action="{{ route('user.destroy',$row->UserID_PK) }}" method="Post">
+                        <a href="{{ route('user.edit',$row->UserID_PK) }}" class="fas fa-wrench"></a>
+                        @csrf
+                        @method('DELETE')
+                        <button type="submit" class=" btn btn-primary">xoá</button>
+                      </form>                            
                     </td>
                   </tr>
                   @endforeach
                   </tbody>           
                 </table>
+                {!!$users->links()!!}
               </div>
               <!-- /.card-body -->
             </div>

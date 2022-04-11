@@ -17,9 +17,9 @@ class FoodController extends Controller
      */
     public function index()
     {
-        $foods = DB::table('food')->select('*')->paginate(10);
+        $foods = DB::table('food')->select('*')->paginate(5);
         $fcs = DB::table('food_categories')->select('*')->get();
-        return view('admin/adminFood/index', compact('foods','fcs'));
+        return view('admin.adminFood.index', compact('foods','fcs'));
     }
 
     /**
@@ -29,7 +29,9 @@ class FoodController extends Controller
      */
     public function create()
     {
-       
+
+        $fcs = DB::table('food_categories')->select('*')->get();
+        return view('admin.adminFood.insert',compact('fcs'));
     }
 
     /**
@@ -40,9 +42,26 @@ class FoodController extends Controller
      */
     public function store(Request $request)
     {
-       
-    }
+         $request->validate([
+            'name' => 'required|max:255',
+            'price' => 'required',
+            'category' => 'required',
+            'image' => 'required',
+            'status' => 'required'
 
+        ]);    
+        $food = new food();
+        $food->FoodName = $request->name;
+        $food->FoodPrice = $request->price;
+        $food->FoodCategoryCode_PFK  = $request->category;
+        $food->FoodCoverPhoto = $request->image;
+        $food->status = $request->status;
+        $food->timestamps = false;
+        $food->save();
+        return redirect()->route('food.index')
+        ->with('success','Thêm thành công thức ăn');
+}
+    
 
     /**
      * Show the form for editing the specified resource.
@@ -50,20 +69,41 @@ class FoodController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($FoodCode)
+    public function edit($id)
     {
-        
+        $food = food::where('FoodCode_PK','=',$id)->first();
+        $fc = food_categories::where('FoodCategoryCode_PK','=',$food->FoodCategoryCode_PFK)->first();
+        $fcs = food_categories::where('FoodCategoryCode_PK','<>',$food->FoodCategoryCode_PFK)->get();
+        return view('admin.adminFood.edit',compact('food','fc','fcs'));
     }
 
     /**
      * Update the specified resource in storage.
-     *
+     *d
      * @param  \Illuminate\Http\Request  $request
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $FoodCode)
+    public function update(Request $request, $id)
     {
+        $request->validate([
+            'name' => 'required|max:255',
+            'price' => 'required',
+            'category' => 'required',
+            'image' => 'required',
+            'status' => 'required'
+
+        ]);    
+        $food = food::where('FoodCode_PK','=',$id)->first();
+        $food->FoodName = $request->name;
+        $food->FoodPrice = $request->price;
+        $food->FoodCategoryCode_PFK  = $request->category;
+        $food->FoodCoverPhoto = $request->image;
+        $food->status = $request->status;
+        $food->timestamps = false;
+        $food->save();
+        return redirect()->route('food.index')
+        ->with('success','update thành công  thức ăn');
         
     }
 
@@ -73,8 +113,10 @@ class FoodController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($FoodCode)
+    public function destroy($id)
     {
-       
+        $food = food::where('FoodCode_PK','=',$id)->delete();
+        return redirect()->route('food.index')->with('success', 'thức ăn đã bị xoá');
+
     }
 }

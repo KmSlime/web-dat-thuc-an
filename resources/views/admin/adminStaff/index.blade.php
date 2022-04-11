@@ -7,7 +7,7 @@
       <div class="container-fluid">
         <div class="row mb-2">
           <div class="col-sm-6">
-            <h1>Quản lý  nhân viên</h1>
+            <h1>Quản lý nhân viên</h1>
           </div>    
         </div>
       </div><!-- /.container-fluid -->
@@ -21,13 +21,19 @@
               </div>
               <!-- /.card-header -->
               <div class="card-body">
-                 <button class=" btn btn-primary" style="float:right; margin-right: 10px; width: 100px;">thêm</button>
+              @if($message = Session::get('success'))
+              <div class="alert alert-success">
+                <p>{{$message}}</p>
+              </div>
+              @endif
+                 <a class=" btn btn-primary" href="{{ route('staff.create')}}" style="float:right; margin-right: 10px; width: 100px;">thêm</a>
                 <table id="data" class="table table-bordered table-hover">
                   <thead>
                   <tr>
                     <th>ID</th>
                     <th>Họ nhân viên</th>     
                     <th>Tên nhân viên</th> 
+                    <th>Giới tính</th> 
                     <th>Địa chỉ</th> 
                     <th>Điện thoại</th>
                     <th>Email</th>       
@@ -45,6 +51,9 @@
                         {{$row->StaffFirstName}}
                     </td>
                     <td>
+                        {{$row->StaffGender}}
+                    </td>    
+                    <td>
                         {{$row->StaffAddress}}
                     </td>                   
                     <td>
@@ -54,14 +63,19 @@
                       {{$row->StaffEmail}}
                     </td>
                     <td>
-                       <a href="#"><i class="fas fa-wrench"></i></a>
-
-                        <a href="#"><i class="fas fa-times"></i></a>                    
+                      <form action="{{ route('staff.destroy',$row->StaffID_PK) }}" method="Post">
+                        <a href="{{ route('staff.edit',$row->StaffID_PK) }}" class="fas fa-wrench"></a>
+                        @csrf
+                        @method('DELETE')
+                        <button type="submit" class=" btn btn-primary">xoá</button>
+                      </form>                    
                     </td>
                   </tr>
                   @endforeach
-                  </tbody>           
+                  </tbody>  
+
                 </table>
+                {!!$staffs->links()!!}
               </div>
               <!-- /.card-body -->
             </div>

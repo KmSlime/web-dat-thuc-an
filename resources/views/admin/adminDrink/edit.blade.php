@@ -7,57 +7,72 @@
       <div class="container-fluid">
         <div class="row mb-2">
           <div class="col-sm-6">
-            <h1>Quản lý thức ăn</h1>
+            <h1>Quản lý thức uống</h1>
           </div>
       
         </div>
       </div><!-- /.container-fluid -->
     </section>
-<div class="content-wrapper">
-    <!-- Content Header (Page header) -->
-    <section class="content-header">
-      <div class="container-fluid">
-        <div class="row mb-2">
-          <div class="col-sm-6">
-            <h1>Quản lý thể loại thức ăn</h1>
-          </div>
         <section class="content">
               <div class="container-fluid">
                 <div class="row">
                   <div class="col-md-6">
                     <div class="card card-primary">
                       <div class="card-header">     
-                          <h3 class="card-title">Thêm thực phẩm</h3>     
+                          <h3 class="card-title">Sửa thức uống</h3>     
                       </div>
                       <!-- /.card-header -->
-                          <form>
+                          <form method="post" action="{{ route('drink.update',  $drink->DrinkCode_PK) }}"> 
+                          @csrf       
+                          @method('PUT')
                               <div class="card-body">
                                 <div class="form-group">
-                                  <label for="">Tên thức ăn</label>
-                                  <input type="name" class="form-control" id="exampleInputEmail1" placeholder="gõ tên thức ăn">
+                                  <label for="">Tên thức uống</label>
+                                  <input type="name" class="form-control" name="name" value="{{$drink->DrinkName}}" placeholder="gõ tên thức ăn">
+                                  @error('name')
+                                  <div class="alert alert-danger mt-1 mb-1">{{ $message }}</div>
+                                  @enderror
                                 </div>
                                 <div class="form-group">
                                   <label for="">Ảnh thức ăn</label>
-                                  <input type="name" class="form-control" id="exampleInputPassword1" placeholder="link ảnh">
+                                  <input type="name" class="form-control" name="image"  value="{{$drink->DrinkCoverPhoto}}" placeholder="link ảnh">
+                                  @error('image')
+                                  <div class="alert alert-danger mt-1 mb-1">{{ $message }}</div>
+                                  @enderror
                                 </div>
                             
                                 <div class="form-group">
                                   <label for="">Thể loại</label>
-                                  <select class="custom-select form-control-border" >
-                                      <option>món ngon</option>
-                                      <option>gà</option>
-                                      <option>thịt</option>
+                                  <select class="custom-select form-control-border" name="category"  >
+                                        <option value="{{$dc->DrinkCategoryCode_PK}}">{{$dc->DrinkCategoryName}}</option>
+                                      @foreach($dcs as $row)
+                                        <option value="{{$row->DrinkCategoryCode_PK }}">{{$row->DrinkCategoryName}}</option>
+                                      @endforeach    
                                     </select>
+                                    @error('category')
+                                    <div class="alert alert-danger mt-1 mb-1">{{ $message }}</div>
+                                  @enderror
                                 </div>
                                 <div class="form-group">
                                   <label for="">Giá tiền</label>
-                                  <input type="number" class="form-control" id="exampleInputPassword1" placeholder="giá tiền">
+                                  <input type="number" class="form-control"  value="{{$drink->DrinkPrice}}" name="price"   placeholder="giá tiền">
+                                  @error('price')
+                                    <div class="alert alert-danger mt-1 mb-1">{{ $message }}</div>
+                                  @enderror
+                                </div>
+                                <div class="form-group">
+                                  <label for="">tình trạng</label>
+                                  <input type="text" class="form-control"  value="{{$drink->Status}}" name="status"  placeholder="tình trạng">
+                                  @error('status')
+                                    <div class="alert alert-danger mt-1 mb-1">{{ $message }}</div>
+                                  @enderror
                                 </div>
                               </div>
                               <!-- /.card-body -->
               
                               <div class="card-footer">
-                                <button type="submit" class="btn btn-primary">Thêm</button>
+                                <a href="{{ route('drink.index') }}"class="btn btn-primary">trở về </a>
+                                <button type="submit" class="btn btn-primary">Sửa</button>
                               </div>
                             </form>
                       <!-- /.card-body -->
