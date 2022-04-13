@@ -26,7 +26,7 @@
                             <div class="form-group">
                                 <label for="last_name" class="col-xs-3 control-label">Số lượng</label>
                                 <div class="col-xs-9">
-                                        <input type="number" name="" class="form-control input-number" value="1">
+                                        <input type="number" name="Soluong" class="form-control input-number" value="1">
                                     </div>
                                 </div>
                             <div class="form-group">

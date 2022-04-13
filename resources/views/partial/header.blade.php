@@ -1,4 +1,7 @@
 <?php
+
+use Illuminate\Contracts\Session\Session;
+
     if(isset($enLogout) && session_start()==true)
     {
             $enLogout = false;
@@ -10,6 +13,7 @@
        foreach ($loginuser as $key){
             $_SESSION['Username'] =$key->Username;
             $_SESSION['IDUser'] =$key->UserID_PK;
+            
         }
    }
    
@@ -41,9 +45,6 @@
                     <li>
                         <a href="/menu">Menu</a>
                     </li>
-                    <li>
-                        <a href="#" target="_blank">Chuỗi nhà hàng</a>
-                    </li>
                     <form class="navbar-form navbar-left">
                         <div class="form-group">
                             <input type="text" class="form-control" placeholder="Search">
@@ -63,10 +64,10 @@
                     <li>
                         <?php
                         if (isset($_SESSION['Username'])) {
-                            echo "<a id="."modal_trigger"." href="."#modal".">Giỏ hàng</a>"; //chuyển tới đường link deli
+                            echo "<a id="."modal_trigger"." href="."/home/cart/".$_SESSION['Username'].">Giỏ hàng</a>"; //chuyển tới đường link deli
                         }
                         else {
-                            echo "<a id="."modal_trigger"." href="."#modal".">Giỏ hàng</a>";// gọi lại form đăng nhập
+                            echo "<a id="."modal_trigger"." href="."/home/cart".">Giỏ hàng</a>";
                         }
                         ?>
                     </li>

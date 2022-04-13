@@ -1,5 +1,8 @@
 @extends('layouts.master')
 @section('content')
+@if($message = Session::get('fail'))
+    <script language="javascript">alert("{{$message}}");</script>
+ @endif
 <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
     <!-- Indicators -->
     <ol class="carousel-indicators">

@@ -84,8 +84,7 @@ class HomeController extends Controller
             }
             else 
             {
-                echo '<script language="javascript">alert("Đăng nhập thất bại, vui lòng kiểm tra lại username và password!");</script>';
-                return view('pages.index',compact('listFood'));
+                return redirect()->route('home') ->with('fail','đăng nhập thất bại');
             }
         }
     function getRegister()

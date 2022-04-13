@@ -120,35 +120,14 @@
                   Quản lý thức ăn
                 </p>
               </a>
-             </li>
-
-             <li class="nav-item">
-              <a href="{{ route('services.index') }}" class="nav-link">
-                <i class="nav-icon fas fa-hamburger"></i>
-                <p>
-                  Quản lý dịch vụ
-                </p>
+              <li class="nav-item">
+              <a href="{{ route('home') }}" class="nav-link">
+                <i class="nav-icon fas fa-home"></i>
+                  <p>
+                    Trở về
+                    </p>
               </a>
              </li>
-
-             <li class="nav-item">
-              <a href="#" class="nav-link">
-                <i class="nav-icon fas fa-hamburger"></i>
-                <p>
-                  Quản lý hóa đơn
-                </p>
-              </a>
-             </li>
-
-             <li class="nav-item">
-              <a href="#" class="nav-link">
-                <i class="nav-icon fas fa-hamburger"></i>
-                <p>
-                  Thống kê
-                </p>
-              </a>
-             </li>
-
           </ul>
         </nav>
         <!-- /.sidebar-menu -->

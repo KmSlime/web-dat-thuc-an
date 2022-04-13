@@ -14,7 +14,7 @@
                             <a href="#">Lịch Sử Đơn Hàng</a>
                         </li>
                         <li>
-                            <a href="#">Dăng Xuất</a>
+                            <a href="/logout">Dăng Xuất</a>
                         </li>
                     </ul>
                 </nav>
@@ -32,7 +32,7 @@
                         <div class="form-group">
                             <label for="first_name" class="col-xs-3 control-label">Tên</label>
                             <div class="col-xs-9">
-                                <input type="text" class="form-control" id="first_name" name="first_name" value="{{$customer->CustomerFirstName}}">
+                                <input type="text" class="form-control" id="first_name" name="first_name" value="<?php if(isset($customer))$customer->CustomerFirstName?>">
                             </div>
                         </div>
                         <div class="form-group">

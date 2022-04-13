@@ -16,7 +16,6 @@ class FoodDetailController extends Controller
     }
     public function getFoodID($ID_Food)
     {
-        
         $listFood = food::where('FoodCode_PK','=',$ID_Food)->select('*');
         $listFood = $listFood->first();
         $category = food_categories::where('FoodCategoryCode_PK','=',$listFood->FoodCategoryCode_PFK)->select('*');

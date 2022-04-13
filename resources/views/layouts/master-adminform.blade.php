@@ -114,6 +114,14 @@
                 </p>
               </a>
              </li>
+             <li class="nav-item">
+              <a href="{{ route('home') }}" class="nav-link">
+                <i class="nav-icon fas fa-home"></i>
+                  <p>
+                    Trở về
+                    </p>
+              </a>
+             </li>
           </ul>
         </nav>
         <!-- /.sidebar-menu -->
